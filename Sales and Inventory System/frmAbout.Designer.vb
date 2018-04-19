@@ -74,7 +74,7 @@ Partial Class frmAbout
         'LogoPictureBox
         '
         Me.LogoPictureBox.Dock = System.Windows.Forms.DockStyle.Fill
-        Me.LogoPictureBox.Image = Global.Sales_and_Inventory_System.My.Resources.Resources.Vaibhav_Patidar
+        Me.LogoPictureBox.Image = Image.FromFile("C:\Users\aroberts\AppData\Roaming\Inv\Sales and Inventory System\Resources\Activate.png")
         Me.LogoPictureBox.Location = New System.Drawing.Point(3, 4)
         Me.LogoPictureBox.Margin = New System.Windows.Forms.Padding(3, 4, 3, 4)
         Me.LogoPictureBox.Name = "LogoPictureBox"

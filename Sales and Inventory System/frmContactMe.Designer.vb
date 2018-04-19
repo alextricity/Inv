@@ -58,7 +58,7 @@ Partial Class frmContactMe
         Me.linkLabel1.Size = New System.Drawing.Size(431, 26)
         Me.linkLabel1.TabIndex = 120
         Me.linkLabel1.TabStop = True
-        Me.linkLabel1.Text = "https://www.facebook.com/vaibhav.patidar.524"
+        Me.linkLabel1.Text = "https://www.facebook.com/alextricity"
         '
         'label7
         '
@@ -70,7 +70,7 @@ Partial Class frmContactMe
         Me.label7.Name = "label7"
         Me.label7.Size = New System.Drawing.Size(142, 26)
         Me.label7.TabIndex = 119
-        Me.label7.Text = "+919630014949"
+        Me.label7.Text = "www.alextricity.com/helpdesk"
         '
         'label1
         '
@@ -82,7 +82,7 @@ Partial Class frmContactMe
         Me.label1.Name = "label1"
         Me.label1.Size = New System.Drawing.Size(112, 26)
         Me.label1.TabIndex = 118
-        Me.label1.Text = "WhatsApp:"
+        Me.label1.Text = "Helpdesk:"
         '
         'label6
         '
@@ -94,7 +94,7 @@ Partial Class frmContactMe
         Me.label6.Name = "label6"
         Me.label6.Size = New System.Drawing.Size(142, 26)
         Me.label6.TabIndex = 116
-        Me.label6.Text = "+919630014949"
+        Me.label6.Text = "573-202-9960"
         '
         'label5
         '
@@ -106,7 +106,7 @@ Partial Class frmContactMe
         Me.label5.Name = "label5"
         Me.label5.Size = New System.Drawing.Size(277, 26)
         Me.label5.TabIndex = 114
-        Me.label5.Text = "Vaibhavpatidar36@gmail.com"
+        Me.label5.Text = "startrailsmail@gmail.com"
         '
         'label4
         '
