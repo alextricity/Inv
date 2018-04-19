@@ -1,4 +1,4 @@
-﻿Imports System.Data.SqlClient
+﻿Imports System.Data.Odbc
 
 
 Public Class frmPurchaseDaybook
@@ -28,12 +28,12 @@ Public Class frmPurchaseDaybook
         Try
             Cursor = Cursors.WaitCursor
             Timer1.Enabled = True
-            con = New SqlConnection(cs)
+            con = New OdbcConnection(cs)
             con.Open()
-            cmd = New SqlCommand("SELECT ST_ID,Date,InvoiceNo,Name,SubTotal,Discount,FreightCharges,OtherCharges,PreviousDue,GrandTotal from Supplier,Stock where Supplier.ID=Stock.SupplierID and PurchaseType='Credit' order by [Date]", con)
+            cmd = New OdbcCommand("SELECT ST_ID,Date,InvoiceNo,Name,SubTotal,Discount,FreightCharges,OtherCharges,PreviousDue,GrandTotal from Supplier,Stock where Supplier.ID=Stock.SupplierID and PurchaseType='Credit' order by [Date]", con)
             cmd.Parameters.Add("@d1", SqlDbType.DateTime, 30, "Date").Value = dtpDateFrom.Value.Date
             cmd.Parameters.Add("@d2", SqlDbType.DateTime, 30, "Date").Value = dtpDateTo.Value.Date
-            adp = New SqlDataAdapter(cmd)
+            adp = New OdbcDataAdapter(cmd)
             dtable = New DataTable()
             adp.Fill(dtable)
             con.Close()

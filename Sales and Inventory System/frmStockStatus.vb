@@ -1,4 +1,4 @@
-﻿Imports System.Data.SqlClient
+﻿Imports System.Data.Odbc
 Public Class frmStockStatus
 
     Private Sub btnClose_Click(ByVal sender As System.Object, ByVal e As System.EventArgs)
@@ -13,23 +13,23 @@ Public Class frmStockStatus
     End Sub
 
     Private Sub dgw_RowPostPaint(ByVal sender As Object, ByVal e As System.Windows.Forms.DataGridViewRowPostPaintEventArgs)
-       
+
     End Sub
     Public Sub Getdata()
         Try
-            con = New SqlConnection(cs)
+            con = New OdbcConnection(cs)
             con.Open()
-            cmd = New SqlCommand("SELECT RTRIM(Product.ProductCode),RTRIM(ProductName),CostPrice,SellingPrice,Discount,VAT,Qty from Temp_Stock,Product where Product.PID=Temp_Stock.ProductID and Qty > 0 order by ProductName", con)
+            cmd = New OdbcCommand("SELECT RTRIM(Product.ProductCode),RTRIM(ProductName),CostPrice,SellingPrice,Discount,VAT,Qty from Temp_Stock,Product where Product.PID=Temp_Stock.ProductID and Qty > 0 order by ProductName", con)
             rdr = cmd.ExecuteReader(CommandBehavior.CloseConnection)
             DataGridView1.Rows.Clear()
             While (rdr.Read() = True)
                 DataGridView1.Rows.Add(rdr(0), rdr(1), rdr(2), rdr(3), rdr(4), rdr(5), rdr(6))
             End While
             For Each r As DataGridViewRow In Me.DataGridView1.Rows
-                con = New SqlConnection(cs)
+                con = New OdbcConnection(cs)
                 con.Open()
                 Dim ct As String = "select ReorderPoint from Product where ProductCode=@d1"
-                cmd = New SqlCommand(ct)
+                cmd = New OdbcCommand(ct)
                 cmd.Connection = con
                 cmd.Parameters.AddWithValue("@d1", r.Cells(0).Value.ToString())
                 rdr = cmd.ExecuteReader()
@@ -68,19 +68,19 @@ Public Class frmStockStatus
 
     Private Sub txtProductName_TextChanged(sender As System.Object, e As System.EventArgs) Handles txtProductName.TextChanged
         Try
-            con = New SqlConnection(cs)
+            con = New OdbcConnection(cs)
             con.Open()
-            cmd = New SqlCommand("SELECT RTRIM(Product.ProductCode),RTRIM(ProductName),CostPrice,SellingPrice,Discount,VAT,Qty from Temp_Stock,Product where Product.PID=Temp_Stock.ProductID and qty > 0 and ProductName like '%" & txtProductName.Text & "%' order by ProductName", con)
+            cmd = New OdbcCommand("SELECT RTRIM(Product.ProductCode),RTRIM(ProductName),CostPrice,SellingPrice,Discount,VAT,Qty from Temp_Stock,Product where Product.PID=Temp_Stock.ProductID and qty > 0 and ProductName like '%" & txtProductName.Text & "%' order by ProductName", con)
             rdr = cmd.ExecuteReader(CommandBehavior.CloseConnection)
             DataGridView1.Rows.Clear()
             While (rdr.Read() = True)
                 DataGridView1.Rows.Add(rdr(0), rdr(1), rdr(2), rdr(3), rdr(4), rdr(5), rdr(6))
             End While
             For Each r As DataGridViewRow In Me.DataGridView1.Rows
-                con = New SqlConnection(cs)
+                con = New OdbcConnection(cs)
                 con.Open()
                 Dim ct As String = "select ReorderPoint from Product where ProductCode=@d1"
-                cmd = New SqlCommand(ct)
+                cmd = New OdbcCommand(ct)
                 cmd.Connection = con
                 cmd.Parameters.AddWithValue("@d1", r.Cells(0).Value.ToString())
                 rdr = cmd.ExecuteReader()

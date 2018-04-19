@@ -1,4 +1,4 @@
-﻿Imports System.Data.SqlClient
+﻿Imports System.Data.Odbc
 
 Public Class frmServices
 
@@ -8,7 +8,7 @@ Public Class frmServices
         txtCID.Text = ""
         txtCustomerID.Text = ""
         txtCustomerName.Text = ""
-       txtRemarks.Text = ""
+        txtRemarks.Text = ""
         txtUpfront.Text = ""
         cmbServiceType.Text = ""
         cmbStatus.SelectedIndex = 1
@@ -22,12 +22,12 @@ Public Class frmServices
         auto()
     End Sub
     Private Function GenerateID() As String
-        con = New SqlConnection(cs)
+        con = New OdbcConnection(cs)
         Dim value As String = "0000"
         Try
             ' Fetch the latest ID from the database
             con.Open()
-            cmd = New SqlCommand("SELECT TOP 1 S_ID FROM Service ORDER BY S_ID DESC", con)
+            cmd = New OdbcCommand("SELECT TOP 1 S_ID FROM Service ORDER BY S_ID DESC", con)
             rdr = cmd.ExecuteReader(CommandBehavior.CloseConnection)
             If rdr.HasRows Then
                 rdr.Read()
@@ -63,7 +63,7 @@ Public Class frmServices
         End Try
     End Sub
     Private Sub btnSelect_Click(sender As System.Object, e As System.EventArgs) Handles btnSelect.Click
-     
+
     End Sub
 
     Private Sub btnClose_Click(sender As System.Object, e As System.EventArgs) Handles btnClose.Click
@@ -71,7 +71,7 @@ Public Class frmServices
     End Sub
 
     Sub Print()
-     
+
 
     End Sub
 
@@ -89,10 +89,10 @@ Public Class frmServices
 
         Try
             Dim RowsAffected As Integer = 0
-            con = New SqlConnection(cs)
+            con = New OdbcConnection(cs)
             con.Open()
             Dim cl As String = "SELECT S_ID FROM Service INNER JOIN InvoiceInfo1 ON Service.S_ID = InvoiceInfo1.ServiceID where S_ID=@d1"
-            cmd = New SqlCommand(cl)
+            cmd = New OdbcCommand(cl)
             cmd.Connection = con
             cmd.Parameters.AddWithValue("@d1", Val(txtID.Text))
             rdr = cmd.ExecuteReader()
@@ -104,10 +104,10 @@ Public Class frmServices
                 Exit Sub
             End If
             con.Close()
-            con = New SqlConnection(cs)
+            con = New OdbcConnection(cs)
             con.Open()
             Dim cq As String = "delete from Service where S_ID=@d1"
-            cmd = New SqlCommand(cq)
+            cmd = New OdbcCommand(cq)
             cmd.Parameters.AddWithValue("@d1", Val(txtID.Text))
             cmd.Connection = con
             RowsAffected = cmd.ExecuteNonQuery()
@@ -132,7 +132,7 @@ Public Class frmServices
     End Sub
 
     Private Sub btnSave_Click(sender As System.Object, e As System.EventArgs) Handles btnSave.Click
-       
+
         If Len(Trim(txtChargesQuote.Text)) = 0 Then
             MessageBox.Show("Please enter charges quote", "", MessageBoxButtons.OK, MessageBoxIcon.Warning)
             txtChargesQuote.Focus()
@@ -148,10 +148,10 @@ Public Class frmServices
             Exit Sub
         End If
         Try
-            con = New SqlConnection(cs)
+            con = New OdbcConnection(cs)
             con.Open()
             Dim ctn As String = "select * from Company"
-            cmd = New SqlCommand(ctn)
+            cmd = New OdbcCommand(ctn)
             cmd.Connection = con
             rdr = cmd.ExecuteReader()
 
@@ -162,16 +162,16 @@ Public Class frmServices
                 End If
                 Return
             End If
-            con = New SqlConnection(cs)
+            con = New OdbcConnection(cs)
             con.Open()
             Dim cb As String = "insert into Service(S_ID, ServiceCode, CustomerID, ServiceType, ServiceCreationDate, ItemDescription, ProblemDescription, ChargesQuote, AdvanceDeposit, EstimatedRepairDate, Remarks, Status) Values (@d1,@d2,@d3,@d4,@d5,@d6,@d7,@d8,@d9,@d10,@d11,@d12)"
-            cmd = New SqlCommand(cb)
+            cmd = New OdbcCommand(cb)
             cmd.Parameters.AddWithValue("@d1", Val(txtID.Text))
             cmd.Parameters.AddWithValue("@d2", txtServiceCode.Text)
             cmd.Parameters.AddWithValue("@d3", Val(txtCID.Text))
             cmd.Parameters.AddWithValue("@d4", cmbServiceType.Text)
             cmd.Parameters.AddWithValue("@d5", dtpServiceCreationDate.Value.Date)
-         
+
             cmd.Parameters.AddWithValue("@d8", Val(txtChargesQuote.Text))
             cmd.Parameters.AddWithValue("@d9", Val(txtUpfront.Text))
             cmd.Parameters.AddWithValue("@d10", dtpEstimatedRepairDate.Value.Date)
@@ -185,10 +185,10 @@ Public Class frmServices
             Dim st As String = "added the new service having service code '" & txtServiceCode.Text & "'"
             LogFunc(lblUser.Text, st)
             If CheckForInternetConnection() = True Then
-                con = New SqlConnection(cs)
+                con = New OdbcConnection(cs)
                 con.Open()
                 Dim ctn1 As String = "select RTRIM(APIURL) from SMSSetting where IsDefault='Yes' and IsEnabled='Yes'"
-                cmd = New SqlCommand(ctn1)
+                cmd = New OdbcCommand(ctn1)
                 cmd.Connection = con
                 rdr = cmd.ExecuteReader()
                 If rdr.Read() Then
@@ -212,7 +212,7 @@ Public Class frmServices
     End Sub
 
     Private Sub btnUpdate_Click(sender As System.Object, e As System.EventArgs) Handles btnUpdate.Click
-      
+
         If Len(Trim(txtChargesQuote.Text)) = 0 Then
             MessageBox.Show("Please enter charges quote", "", MessageBoxButtons.OK, MessageBoxIcon.Warning)
             txtChargesQuote.Focus()
@@ -228,16 +228,16 @@ Public Class frmServices
             Exit Sub
         End If
         Try
-            con = New SqlConnection(cs)
+            con = New OdbcConnection(cs)
             con.Open()
             Dim cb As String = "Update Service set ServiceCode=@d2, CustomerID=@d3, ServiceType=@d4, ServiceCreationDate=@d5, ItemDescription=@d6, ProblemDescription=@d7, ChargesQuote=@d8, AdvanceDeposit=@d9, EstimatedRepairDate=@d10, Remarks=@d11, Status=@d12 where S_ID=@d1"
-            cmd = New SqlCommand(cb)
+            cmd = New OdbcCommand(cb)
             cmd.Parameters.AddWithValue("@d1", Val(txtID.Text))
             cmd.Parameters.AddWithValue("@d2", txtServiceCode.Text)
             cmd.Parameters.AddWithValue("@d3", Val(txtCID.Text))
             cmd.Parameters.AddWithValue("@d4", cmbServiceType.Text)
             cmd.Parameters.AddWithValue("@d5", dtpServiceCreationDate.Value.Date)
-          
+
             cmd.Parameters.AddWithValue("@d8", Val(txtChargesQuote.Text))
             cmd.Parameters.AddWithValue("@d9", Val(txtUpfront.Text))
             cmd.Parameters.AddWithValue("@d10", dtpEstimatedRepairDate.Value.Date)
@@ -259,7 +259,7 @@ Public Class frmServices
     End Sub
 
     Private Sub btnGetData_Click(sender As System.Object, e As System.EventArgs) Handles btnGetData.Click
-       
+
     End Sub
 
     Private Sub btnNew_Click(sender As System.Object, e As System.EventArgs) Handles btnNew.Click
@@ -302,10 +302,10 @@ Public Class frmServices
     End Sub
     Sub fillServiceType()
         Try
-            con = New SqlConnection(cs)
+            con = New OdbcConnection(cs)
             con.Open()
-            adp = New SqlDataAdapter()
-            adp.SelectCommand = New SqlCommand("SELECT distinct RTRIM(ServiceType) FROM Service", con)
+            adp = New OdbcDataAdapter()
+            adp.SelectCommand = New OdbcCommand("SELECT distinct RTRIM(ServiceType) FROM Service", con)
             ds = New DataSet("ds")
             adp.Fill(ds)
             dtable = ds.Tables(0)

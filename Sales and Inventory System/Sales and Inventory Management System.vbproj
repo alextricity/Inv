@@ -109,6 +109,7 @@
     <Import Include="System.Xml.Linq" />
   </ItemGroup>
   <ItemGroup>
+    <None Include="Classes.vb.original" />
     <Compile Include="frmContactMe.Designer.vb">
       <DependentUpon>frmContactMe.vb</DependentUpon>
     </Compile>
@@ -444,6 +445,7 @@
     </EmbeddedResource>
   </ItemGroup>
   <ItemGroup>
+    <None Include="App.Config.ORIGINAL" />
     <None Include="App.config" />
   </ItemGroup>
   <ItemGroup>
@@ -451,6 +453,9 @@
     <Content Include="fevicon.ico" />
     <Content Include="inventory-maintenance-icon.ico" />
     <Content Include="SnapShot.jpg" />
+    <None Include="Resources\SQLSettings.dat">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
     <None Include="Resources\task-manager1.png" />
     <None Include="Resources\MS-Word-2-icon1.png" />
     <None Include="Resources\Wordpad_icon_%28Windows_7%2911.png" />
@@ -474,7 +479,6 @@
     <None Include="Resources\images %283%29~3.png" />
     <None Include="Resources\images %2816%29.png" />
     <None Include="Resources\download.jpg" />
-    <None Include="Resources\Vaibhav Patidar.jpg" />
     <None Include="Resources\Billing-icon.png" />
     <None Include="Resources\Utilities-icon.png" />
     <None Include="Resources\Users-icon.png" />

@@ -1,4 +1,4 @@
-﻿Imports System.Data.SqlClient
+﻿Imports System.Data.Odbc
 Imports System.IO
 
 Imports System.Globalization
@@ -53,12 +53,12 @@ Public Class frmSales
         Clear1()
     End Sub
     Private Function GenerateID() As String
-        con = New SqlConnection(cs)
+        con = New OdbcConnection(cs)
         Dim value As String = "0000"
         Try
             ' Fetch the latest ID from the database
             con.Open()
-            cmd = New SqlCommand("SELECT TOP 1 Inv_ID FROM InvoiceInfo ORDER BY Inv_ID DESC", con)
+            cmd = New OdbcCommand("SELECT TOP 1 Inv_ID FROM InvoiceInfo ORDER BY Inv_ID DESC", con)
             rdr = cmd.ExecuteReader(CommandBehavior.CloseConnection)
             If rdr.HasRows Then
                 rdr.Read()
@@ -94,7 +94,7 @@ Public Class frmSales
         End Try
     End Sub
     Private Sub btnSelect_Click(sender As System.Object, e As System.EventArgs) Handles btnSelect.Click
-        
+
     End Sub
 
     Private Sub btnClose_Click(sender As System.Object, e As System.EventArgs) Handles btnClose.Click
@@ -159,11 +159,11 @@ Public Class frmSales
                 Cursor = Cursors.WaitCursor
                 Timer1.Enabled = True
                 Dim rpt As New rptInvoice 'The report you created.
-                Dim myConnection As SqlConnection
-                Dim MyCommand, MyCommand1 As New SqlCommand()
-                Dim myDA, myDA1 As New SqlDataAdapter()
+                Dim myConnection As OdbcConnection
+                Dim MyCommand, MyCommand1 As New OdbcCommand()
+                Dim myDA, myDA1 As New OdbcDataAdapter()
                 Dim myDS As New DataSet 'The DataSet you created.
-                myConnection = New SqlConnection(cs)
+                myConnection = New OdbcConnection(cs)
                 MyCommand.Connection = myConnection
                 MyCommand1.Connection = myConnection
                 MyCommand.CommandText = "SELECT Customer.ID, Customer.Name, Customer.Gender, Customer.Address, Customer.City, Customer.State, Customer.ZipCode, Customer.ContactNo, Customer.EmailID, Customer.Remarks,Customer.Photo, InvoiceInfo.Inv_ID, InvoiceInfo.InvoiceNo, InvoiceInfo.InvoiceDate, InvoiceInfo.CustomerID , InvoiceInfo.GrandTotal, InvoiceInfo.TotalPaid, InvoiceInfo.Balance, Invoice_Product.IPo_ID, Invoice_Product.InvoiceID, Invoice_Product.ProductID, Invoice_Product.CostPrice, Invoice_Product.SellingPrice, Invoice_Product.Margin,Invoice_Product.Qty, Invoice_Product.Amount, Invoice_Product.DiscountPer, Invoice_Product.Discount, Invoice_Product.VATPer, Invoice_Product.VAT, Invoice_Product.TotalAmount, Product.PID,Product.ProductCode, Product.ProductName FROM Customer INNER JOIN InvoiceInfo ON Customer.ID = InvoiceInfo.CustomerID INNER JOIN Invoice_Product ON InvoiceInfo.Inv_ID = Invoice_Product.InvoiceID INNER JOIN Product ON Invoice_Product.ProductID = Product.PID where InvoiceInfo.Invoiceno=@d1"
@@ -180,11 +180,11 @@ Public Class frmSales
                 Cursor = Cursors.WaitCursor
                 Timer1.Enabled = True
                 '  Dim rpt As New rptInvoice2 'The report you created.
-                Dim myConnection As SqlConnection
-                Dim MyCommand, MyCommand1 As New SqlCommand()
-                Dim myDA, myDA1 As New SqlDataAdapter()
+                Dim myConnection As OdbcConnection
+                Dim MyCommand, MyCommand1 As New OdbcCommand()
+                Dim myDA, myDA1 As New OdbcDataAdapter()
                 Dim myDS As New DataSet 'The DataSet you created.
-                myConnection = New SqlConnection(cs)
+                myConnection = New OdbcConnection(cs)
                 MyCommand.Connection = myConnection
                 MyCommand1.Connection = myConnection
                 MyCommand.CommandText = "SELECT Customer.ID, Customer.Name, Customer.Gender, Customer.Address, Customer.City, Customer.State, Customer.ZipCode, Customer.ContactNo, Customer.EmailID, Customer.Remarks,Customer.Photo, InvoiceInfo.Inv_ID, InvoiceInfo.InvoiceNo, InvoiceInfo.InvoiceDate, InvoiceInfo.CustomerID , InvoiceInfo.GrandTotal, InvoiceInfo.TotalPaid, InvoiceInfo.Balance, Invoice_Product.IPo_ID, Invoice_Product.InvoiceID, Invoice_Product.ProductID, Invoice_Product.CostPrice, Invoice_Product.SellingPrice, Invoice_Product.Margin,Invoice_Product.Qty, Invoice_Product.Amount, Invoice_Product.DiscountPer, Invoice_Product.Discount, Invoice_Product.VATPer, Invoice_Product.VAT, Invoice_Product.TotalAmount, Product.PID,Product.ProductCode, Product.ProductName FROM Customer INNER JOIN InvoiceInfo ON Customer.ID = InvoiceInfo.CustomerID INNER JOIN Invoice_Product ON InvoiceInfo.Inv_ID = Invoice_Product.InvoiceID INNER JOIN Product ON Invoice_Product.ProductID = Product.PID where InvoiceInfo.Invoiceno=@d1"
@@ -199,7 +199,7 @@ Public Class frmSales
                 myDA.Fill(myDS, "Customer")
                 myDA.Fill(myDS, "Product")
                 myDA1.Fill(myDS, "Company")
-            
+
                 frmReport.ShowDialog()
             End If
         Catch ex As Exception
@@ -305,7 +305,7 @@ Public Class frmSales
                 btnRemove.Enabled = True
                 btnListUpdate.Enabled = True
             End If
-          
+
         End If
     End Sub
 
@@ -335,20 +335,20 @@ Public Class frmSales
             Dim RowsAffected As Integer = 0
             For Each row As DataGridViewRow In DataGridView1.Rows
                 If Not row.IsNewRow Then
-                    con = New SqlConnection(cs)
+                    con = New OdbcConnection(cs)
                     con.Open()
                     Dim cb2 As String = "Update Temp_Stock set Qty = Qty + " & row.Cells(5).Value & " where ProductID=@d1"
-                    cmd = New SqlCommand(cb2)
+                    cmd = New OdbcCommand(cb2)
                     cmd.Connection = con
                     cmd.Parameters.AddWithValue("@d1", Val(row.Cells(12).Value))
                     cmd.ExecuteReader()
                     con.Close()
                 End If
             Next
-            con = New SqlConnection(cs)
+            con = New OdbcConnection(cs)
             con.Open()
             Dim cq As String = "delete from InvoiceInfo where Inv_ID=@d1"
-            cmd = New SqlCommand(cq)
+            cmd = New OdbcCommand(cq)
             cmd.Parameters.AddWithValue("@d1", Val(txtID.Text))
             cmd.Connection = con
             RowsAffected = cmd.ExecuteNonQuery()
@@ -377,8 +377,8 @@ Public Class frmSales
         i = Math.Round(i, 2)
         txtPaymentDue.Text = i
     End Sub
-  
-    
+
+
     Private Sub btnSave_Click(sender As System.Object, e As System.EventArgs) Handles btnSave.Click
         If Len(Trim(txtSalesmanID.Text)) = 0 Then
             MessageBox.Show("Please retrieve salesman id", "", MessageBoxButtons.OK, MessageBoxIcon.Warning)
@@ -407,10 +407,10 @@ Public Class frmSales
             Exit Sub
         End If
         Try
-            con = New SqlConnection(cs)
+            con = New OdbcConnection(cs)
             con.Open()
             Dim ctn1 As String = "select * from Company"
-            cmd = New SqlCommand(ctn1)
+            cmd = New OdbcCommand(ctn1)
             cmd.Connection = con
             rdr = cmd.ExecuteReader()
 
@@ -422,11 +422,11 @@ Public Class frmSales
                 Return
             End If
             For Each row As DataGridViewRow In DataGridView1.Rows
-                Dim con As New SqlConnection(cs)
+                Dim con As New OdbcConnection(cs)
                 con.Open()
-                Dim cmd As New SqlCommand("SELECT Qty from Temp_Stock where ProductID=@d1", con)
+                Dim cmd As New OdbcCommand("SELECT Qty from Temp_Stock where ProductID=@d1", con)
                 cmd.Parameters.AddWithValue("@d1", Val(row.Cells(12).Value))
-                Dim da As New SqlDataAdapter(cmd)
+                Dim da As New OdbcDataAdapter(cmd)
                 Dim ds As DataSet = New DataSet()
                 da.Fill(ds)
                 If ds.Tables(0).Rows.Count > 0 Then
@@ -438,10 +438,10 @@ Public Class frmSales
                 End If
                 con.Close()
             Next
-            con = New SqlConnection(cs)
+            con = New OdbcConnection(cs)
             con.Open()
             Dim cb As String = "insert into InvoiceInfo( Inv_ID, InvoiceNo, InvoiceDate, CustomerID, GrandTotal, TotalPaid, Balance, Remarks,SalesmanID) Values (@d1,@d2,@d3,@d4,@d5,@d6,@d7,@d8," & txtSM_ID.Text & ")"
-            cmd = New SqlCommand(cb)
+            cmd = New OdbcCommand(cb)
             cmd.Parameters.AddWithValue("@d1", Val(txtID.Text))
             cmd.Parameters.AddWithValue("@d2", txtInvoiceNo.Text)
             cmd.Parameters.AddWithValue("@d3", dtpInvoiceDate.Value.Date)
@@ -453,7 +453,7 @@ Public Class frmSales
             cmd.Connection = con
             cmd.ExecuteReader()
             con.Close()
-        LedgerSave(dtpInvoiceDate.Value.Date, txtCustomerName.Text, txtInvoiceNo.Text, "Sales", Val(txtGrandTotal.Text), 0, txtCustomerID.Text)
+            LedgerSave(dtpInvoiceDate.Value.Date, txtCustomerName.Text, txtInvoiceNo.Text, "Sales", Val(txtGrandTotal.Text), 0, txtCustomerID.Text)
             For Each row As DataGridViewRow In DataGridView2.Rows
                 If Not row.IsNewRow Then
                     If row.Cells(0).Value = "By Cash" Then
@@ -466,10 +466,10 @@ Public Class frmSales
             Next
             For Each row As DataGridViewRow In DataGridView1.Rows
                 If Not row.IsNewRow Then
-                    con = New SqlConnection(cs)
+                    con = New OdbcConnection(cs)
                     con.Open()
                     Dim cb4 As String = "update Temp_stock set qty = qty - (" & row.Cells(5).Value & ") where ProductID=@d1"
-                    cmd = New SqlCommand(cb4)
+                    cmd = New OdbcCommand(cb4)
                     cmd.Connection = con
                     cmd.Parameters.AddWithValue("@d1", Val(row.Cells(12).Value))
                     cmd.ExecuteNonQuery()
@@ -480,10 +480,10 @@ Public Class frmSales
             Dim st As String = "added the new bill (Products) having invoice no. '" & txtInvoiceNo.Text & "'"
             LogFunc(lblUser.Text, st)
             If CheckForInternetConnection() = True Then
-                con = New SqlConnection(cs)
+                con = New OdbcConnection(cs)
                 con.Open()
                 Dim ctn As String = "select RTRIM(APIURL) from SMSSetting where IsDefault='Yes' and IsEnabled='Yes'"
-                cmd = New SqlCommand(ctn)
+                cmd = New OdbcCommand(ctn)
                 cmd.Connection = con
                 rdr = cmd.ExecuteReader()
                 If rdr.Read() Then
@@ -529,19 +529,19 @@ Public Class frmSales
             Exit Sub
         End If
         Try
-           
-            con = New SqlConnection(cs)
+
+            con = New OdbcConnection(cs)
             con.Open()
             Dim cq As String = "delete from Invoice_Payment where InvoiceID=@d1"
-            cmd = New SqlCommand(cq)
+            cmd = New OdbcCommand(cq)
             cmd.Parameters.AddWithValue("@d1", Val(txtID.Text))
             cmd.Connection = con
             cmd.ExecuteNonQuery()
             con.Close()
-            con = New SqlConnection(cs)
+            con = New OdbcConnection(cs)
             con.Open()
             Dim cb2 As String = "insert into Invoice_Payment(InvoiceID,PaymentMode,TotalPaid,PaymentDate) VALUES (" & txtID.Text & " ,@d4,@d5,@d6)"
-            cmd = New SqlCommand(cb2)
+            cmd = New OdbcCommand(cb2)
             cmd.Connection = con
             ' Prepare command for repeated execution
             cmd.Prepare()

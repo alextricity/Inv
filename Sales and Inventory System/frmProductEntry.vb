@@ -1,14 +1,14 @@
-﻿Imports System.Data.SqlClient
+﻿Imports System.Data.Odbc
 Imports System.IO
 
 Public Class frmProductEntry
     Private Function GenerateID() As String
-        con = New SqlConnection(cs)
+        con = New OdbcConnection(cs)
         Dim value As String = "0000"
         Try
             ' Fetch the latest ID from the database
             con.Open()
-            cmd = New SqlCommand("SELECT TOP 1 PID FROM Product ORDER BY PID DESC", con)
+            cmd = New OdbcCommand("SELECT TOP 1 PID FROM Product ORDER BY PID DESC", con)
             rdr = cmd.ExecuteReader(CommandBehavior.CloseConnection)
             If rdr.HasRows Then
                 rdr.Read()
@@ -69,10 +69,10 @@ Public Class frmProductEntry
     End Sub
     Sub fillCategory()
         Try
-            con = New SqlConnection(cs)
+            con = New OdbcConnection(cs)
             con.Open()
-            adp = New SqlDataAdapter()
-            adp.SelectCommand = New SqlCommand("SELECT distinct RTRIM(CategoryName) FROM Category", con)
+            adp = New OdbcDataAdapter()
+            adp.SelectCommand = New OdbcCommand("SELECT distinct RTRIM(CategoryName) FROM Category", con)
             ds = New DataSet("ds")
             adp.Fill(ds)
             dtable = ds.Tables(0)
@@ -148,10 +148,10 @@ Public Class frmProductEntry
         End If
         Try
             Fill()
-            con = New SqlConnection(cs)
+            con = New OdbcConnection(cs)
             con.Open()
             Dim ck As String = "insert into Product_Join(ProductID,photo) VALUES (" & txtID.Text & ",@d2)"
-            cmd = New SqlCommand(ck)
+            cmd = New OdbcCommand(ck)
             cmd.Connection = con
             ' Prepare command for repeated execution
             cmd.Prepare()
@@ -163,7 +163,7 @@ Public Class frmProductEntry
                     Dim bmpImage As New Bitmap(img)
                     bmpImage.Save(ms, System.Drawing.Imaging.ImageFormat.Jpeg)
                     Dim data As Byte() = ms.GetBuffer()
-                    Dim p As New SqlParameter("@d2", SqlDbType.Image)
+                    Dim p As New OdbcParameter("@d2", SqlDbType.Image)
                     p.Value = data
                     cmd.Parameters.Add(p)
                     cmd.ExecuteNonQuery()
@@ -171,10 +171,10 @@ Public Class frmProductEntry
                 End If
             Next
             con.Close()
-            con = New SqlConnection(cs)
+            con = New OdbcConnection(cs)
             con.Open()
             Dim cb1 As String = "insert into Temp_Stock(ProductID,Qty) VALUES (" & txtID.Text & "," & txtOpeningStock.Text & ")"
-            cmd = New SqlCommand(cb1)
+            cmd = New OdbcCommand(cb1)
             cmd.Connection = con
             cmd.ExecuteNonQuery()
             con.Close()
@@ -201,10 +201,10 @@ Public Class frmProductEntry
     Private Sub DeleteRecord()
         Try
             Dim RowsAffected As Integer = 0
-            con = New SqlConnection(cs)
+            con = New OdbcConnection(cs)
             con.Open()
             Dim cl2 As String = "SELECT PID FROM Product INNER JOIN Stock_Product ON Product.PID = Stock_Product.ProductID where PID=@d1"
-            cmd = New SqlCommand(cl2)
+            cmd = New OdbcCommand(cl2)
             cmd.Connection = con
             cmd.Parameters.AddWithValue("@d1", Val(txtID.Text))
             rdr = cmd.ExecuteReader()
@@ -216,10 +216,10 @@ Public Class frmProductEntry
                 Exit Sub
             End If
             con.Close()
-            con = New SqlConnection(cs)
+            con = New OdbcConnection(cs)
             con.Open()
             Dim cq As String = "delete from Product where PID=@d1"
-            cmd = New SqlCommand(cq)
+            cmd = New OdbcCommand(cq)
             cmd.Parameters.AddWithValue("@d1", Val(txtID.Text))
             cmd.Connection = con
             RowsAffected = cmd.ExecuteNonQuery()
@@ -298,18 +298,18 @@ Public Class frmProductEntry
         End If
         Try
             Fill()
-            con = New SqlConnection(cs)
+            con = New OdbcConnection(cs)
             con.Open()
             Dim cb1 As String = "delete from Product_Join where ProductID=@d1"
-            cmd = New SqlCommand(cb1)
+            cmd = New OdbcCommand(cb1)
             cmd.Parameters.AddWithValue("@d1", Val(txtID.Text))
             cmd.Connection = con
             cmd.ExecuteReader()
             con.Close()
-            con = New SqlConnection(cs)
+            con = New OdbcConnection(cs)
             con.Open()
             Dim ck As String = "insert into Product_Join(ProductID,Photo) VALUES (" & txtID.Text & ",@d2)"
-            cmd = New SqlCommand(ck)
+            cmd = New OdbcCommand(ck)
             cmd.Connection = con
             ' Prepare command for repeated execution
             cmd.Prepare()
@@ -321,7 +321,7 @@ Public Class frmProductEntry
                     Dim bmpImage As New Bitmap(img)
                     bmpImage.Save(ms, System.Drawing.Imaging.ImageFormat.Jpeg)
                     Dim data As Byte() = ms.GetBuffer()
-                    Dim p As New SqlParameter("@d2", SqlDbType.Image)
+                    Dim p As New OdbcParameter("@d2", SqlDbType.Image)
                     p.Value = data
                     cmd.Parameters.Add(p)
                     cmd.ExecuteNonQuery()
@@ -365,11 +365,11 @@ Public Class frmProductEntry
 
     Private Sub btnGetData_Click(sender As System.Object, e As System.EventArgs) Handles btnGetData.Click
         ' Dim frm As New frmProductList
-       
+
     End Sub
     Sub Fill()
         Try
-            con = New SqlConnection(cs)
+            con = New OdbcConnection(cs)
             con.Open()
             cmd = con.CreateCommand()
             cmd.CommandText = "SELECT ID from SubCategory where Category=@d1 and SubCategoryName=@d2"
@@ -396,10 +396,10 @@ Public Class frmProductEntry
     Private Sub cmbCategory_SelectedIndexChanged(sender As System.Object, e As System.EventArgs) Handles cmbCategory.SelectedIndexChanged
         Try
             cmbSubCategory.Enabled = True
-            con = New SqlConnection(cs)
+            con = New OdbcConnection(cs)
             con.Open()
             Dim ct As String = "SELECT distinct RTRIM(SubCategoryName) FROM SubCategory,Category where SubCategory.Category=Category.CategoryName and CategoryName=@d1"
-            cmd = New SqlCommand(ct)
+            cmd = New OdbcCommand(ct)
             cmd.Connection = con
             cmd.Parameters.AddWithValue("@d1", cmbCategory.Text)
             rdr = cmd.ExecuteReader()

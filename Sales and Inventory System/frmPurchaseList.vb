@@ -1,4 +1,4 @@
-﻿Imports System.Data.SqlClient
+﻿Imports System.Data.Odbc
 
 Imports System.IO
 
@@ -6,9 +6,9 @@ Public Class frmPurchaseList
 
     Public Sub Getdata()
         Try
-            con = New SqlConnection(cs)
+            con = New OdbcConnection(cs)
             con.Open()
-            cmd = New SqlCommand("SELECT ST_ID, RTRIM(InvoiceNo), Date,RTRIM(PurchaseType),Supplier.ID, RTRIM(Supplier.SupplierID),RTRIM(Name), SubTotal, DiscountPer, Discount, FreightCharges, OtherCharges,PreviousDue, Total, RoundOff, GrandTotal, TotalPayment, PaymentDue, RTRIM(Stock.Remarks) from Supplier,Stock where Supplier.ID=Stock.SupplierID order by [Date]", con)
+            cmd = New OdbcCommand("SELECT ST_ID, RTRIM(InvoiceNo), Date,RTRIM(PurchaseType),Supplier.ID, RTRIM(Supplier.SupplierID),RTRIM(Name), SubTotal, DiscountPer, Discount, FreightCharges, OtherCharges,PreviousDue, Total, RoundOff, GrandTotal, TotalPayment, PaymentDue, RTRIM(Stock.Remarks) from Supplier,Stock where Supplier.ID=Stock.SupplierID order by [Date]", con)
             While (rdr.Read() = True)
                 dgw.Rows.Add(rdr(0), rdr(1), rdr(2), rdr(3), rdr(4), rdr(5), rdr(6), rdr(7), rdr(8), rdr(9), rdr(10), rdr(11), rdr(12), rdr(13), rdr(14), rdr(15), rdr(16), rdr(17), rdr(18))
             End While
@@ -26,12 +26,12 @@ Public Class frmPurchaseList
             If dgw.Rows.Count > 0 Then
                 If lblSet.Text = "Purchase" Then
                     Dim dr As DataGridViewRow = dgw.SelectedRows(0)
-                  
-                  
-                    con = New SqlConnection(cs)
+
+
+                    con = New OdbcConnection(cs)
                     con.Open()
                     Dim sql As String = "SELECT PID,RTRIM(Product.ProductCode),RTRIM(Productname),Price,Qty,TotalAmount from Stock,Stock_Product,product where product.PID=Stock_product.ProductID and Stock.ST_ID=Stock_Product.StockID and ST_ID=" & dr.Cells(0).Value & ""
-                    cmd = New SqlCommand(sql, con)
+                    cmd = New OdbcCommand(sql, con)
                     rdr = cmd.ExecuteReader(CommandBehavior.CloseConnection)
 
                     While (rdr.Read() = True)
@@ -71,9 +71,9 @@ Public Class frmPurchaseList
 
     Private Sub txtSupplierName_TextChanged(sender As System.Object, e As System.EventArgs) Handles txtSupplierName.TextChanged
         Try
-            con = New SqlConnection(cs)
+            con = New OdbcConnection(cs)
             con.Open()
-            cmd = New SqlCommand("SELECT ST_ID, RTRIM(InvoiceNo), Date,RTRIM(PurchaseType),Supplier.ID, RTRIM(Supplier.SupplierID),RTRIM(Name), SubTotal, DiscountPer, Discount, FreightCharges, OtherCharges,PreviousDue, Total, RoundOff, GrandTotal, TotalPayment, PaymentDue, RTRIM(Stock.Remarks) from Supplier,Stock where Supplier.ID=Stock.SupplierID  and [Name] like '%" & txtSupplierName.Text & "%' order by [Date]", con)
+            cmd = New OdbcCommand("SELECT ST_ID, RTRIM(InvoiceNo), Date,RTRIM(PurchaseType),Supplier.ID, RTRIM(Supplier.SupplierID),RTRIM(Name), SubTotal, DiscountPer, Discount, FreightCharges, OtherCharges,PreviousDue, Total, RoundOff, GrandTotal, TotalPayment, PaymentDue, RTRIM(Stock.Remarks) from Supplier,Stock where Supplier.ID=Stock.SupplierID  and [Name] like '%" & txtSupplierName.Text & "%' order by [Date]", con)
             While (rdr.Read() = True)
                 dgw.Rows.Add(rdr(0), rdr(1), rdr(2), rdr(3), rdr(4), rdr(5), rdr(6), rdr(7), rdr(8), rdr(9), rdr(10), rdr(11), rdr(12), rdr(13), rdr(14), rdr(15), rdr(16), rdr(17), rdr(18))
             End While
@@ -90,9 +90,9 @@ Public Class frmPurchaseList
 
     Private Sub btnGetData_Click(sender As System.Object, e As System.EventArgs) Handles btnGetData.Click
         Try
-            con = New SqlConnection(cs)
+            con = New OdbcConnection(cs)
             con.Open()
-            cmd = New SqlCommand("SELECT ST_ID, RTRIM(InvoiceNo), Date,RTRIM(PurchaseType),Supplier.ID, RTRIM(Supplier.SupplierID),RTRIM(Name), SubTotal, DiscountPer, Discount, FreightCharges, OtherCharges,PreviousDue, Total, RoundOff, GrandTotal, TotalPayment, PaymentDue, RTRIM(Stock.Remarks) from Supplier,Stock where Supplier.ID=Stock.SupplierID  and [Date] between @d1 and @d2 order by [Date]", con)
+            cmd = New OdbcCommand("SELECT ST_ID, RTRIM(InvoiceNo), Date,RTRIM(PurchaseType),Supplier.ID, RTRIM(Supplier.SupplierID),RTRIM(Name), SubTotal, DiscountPer, Discount, FreightCharges, OtherCharges,PreviousDue, Total, RoundOff, GrandTotal, TotalPayment, PaymentDue, RTRIM(Stock.Remarks) from Supplier,Stock where Supplier.ID=Stock.SupplierID  and [Date] between @d1 and @d2 order by [Date]", con)
             While (rdr.Read() = True)
                 dgw.Rows.Add(rdr(0), rdr(1), rdr(2), rdr(3), rdr(4), rdr(5), rdr(6), rdr(7), rdr(8), rdr(9), rdr(10), rdr(11), rdr(12), rdr(13), rdr(14), rdr(15), rdr(16), rdr(17), rdr(18))
             End While

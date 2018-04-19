@@ -1,4 +1,4 @@
-﻿Imports System.Data.SqlClient
+﻿Imports System.Data.Odbc
 Public Class frmLogin
     Dim frm As New frmMainMenu
 
@@ -14,7 +14,7 @@ Public Class frmLogin
             Exit Sub
         End If
         Try
-            con = New SqlConnection(cs)
+            con = New OdbcConnection(cs)
             con.Open()
             cmd = con.CreateCommand()
             cmd.CommandText = "SELECT RTRIM(UserID),RTRIM(Password) FROM Registration where UserID = @d1 and Password=@d2 and Active='Yes'"
@@ -22,7 +22,7 @@ Public Class frmLogin
             cmd.Parameters.AddWithValue("@d2", Encrypt(Password.Text))
             rdr = cmd.ExecuteReader()
             If rdr.Read() Then
-                con = New SqlConnection(cs)
+                con = New OdbcConnection(cs)
                 con.Open()
                 cmd = con.CreateCommand()
                 cmd.CommandText = "SELECT usertype FROM Registration where UserID=@d3 and Password=@d4"

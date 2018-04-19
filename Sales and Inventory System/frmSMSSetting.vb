@@ -3,12 +3,12 @@ Imports System.IO
 Imports System.Net
 Imports System.Text
 Imports System.Web
-Imports System.Data.SqlClient
+Imports System.Data.Odbc
 
 Public Class frmSMSSetting
     Dim st1, st2, st3 As String
     Private Sub Button1_Click(sender As System.Object, e As System.EventArgs)
-     
+
     End Sub
     Sub Reset()
         txtAPIURL.Text = ""
@@ -30,10 +30,10 @@ Public Class frmSMSSetting
         End If
         Try
             If chkIsDefault.Checked = True Then
-                con = New SqlConnection(cs)
+                con = New OdbcConnection(cs)
                 con.Open()
                 Dim ct As String = "select IsDefault from SMSSetting where IsDefault='Yes'"
-                cmd = New SqlCommand(ct)
+                cmd = New OdbcCommand(ct)
                 cmd.Connection = con
                 rdr = cmd.ExecuteReader()
                 If rdr.Read() Then
@@ -61,9 +61,9 @@ Public Class frmSMSSetting
     End Sub
     Public Sub Getdata()
         Try
-            con = New SqlConnection(cs)
+            con = New OdbcConnection(cs)
             con.Open()
-            cmd = New SqlCommand("SELECT ID,RTRIM(APIURL), RTRIM(IsEnabled), RTRIM(IsDefault) from SMSSetting", con)
+            cmd = New OdbcCommand("SELECT ID,RTRIM(APIURL), RTRIM(IsEnabled), RTRIM(IsDefault) from SMSSetting", con)
             While (rdr.Read() = True)
                 dgw.Rows.Add(rdr(0), rdr(1), rdr(2), rdr(3))
             End While
@@ -91,10 +91,10 @@ Public Class frmSMSSetting
 
         Try
             Dim RowsAffected As Integer = 0
-            con = New SqlConnection(cs)
+            con = New OdbcConnection(cs)
             con.Open()
             Dim cq As String = "delete from SMSSetting where ID=@d1"
-            cmd = New SqlCommand(cq)
+            cmd = New OdbcCommand(cq)
             cmd.Connection = con
             cmd.Parameters.AddWithValue("@d1", Val(txtID.Text))
             RowsAffected = cmd.ExecuteNonQuery()
@@ -159,10 +159,10 @@ Public Class frmSMSSetting
         End If
         Try
             If chkIsDefault.Checked = True Then
-                con = New SqlConnection(cs)
+                con = New OdbcConnection(cs)
                 con.Open()
                 Dim ct As String = "Update SMSSetting set IsDefault='No'"
-                cmd = New SqlCommand(ct)
+                cmd = New OdbcCommand(ct)
                 cmd.Connection = con
                 cmd.ExecuteReader()
             End If

@@ -1,4 +1,4 @@
-﻿Imports System.Data.SqlClient
+﻿Imports System.Data.Odbc
 
 
 Public Class frmTrialBalanceAccounting
@@ -43,10 +43,10 @@ Public Class frmTrialBalanceAccounting
         Try
             Cursor = Cursors.WaitCursor
             Timer1.Enabled = True
-            con = New SqlConnection(cs)
+            con = New OdbcConnection(cs)
             con.Open()
             Dim ct As String = "select * from LedgerBook where Date >=@d2 and Date < @d3"
-            cmd = New SqlCommand(ct)
+            cmd = New OdbcCommand(ct)
             cmd.Parameters.Add("@d2", SqlDbType.DateTime, 30, "Date").Value = dtpDateFrom.Value.Date
             cmd.Parameters.Add("@d3", SqlDbType.DateTime, 30, "Date").Value = dtpDateTo.Value.Date.AddDays(1)
             cmd.Connection = con
@@ -59,12 +59,12 @@ Public Class frmTrialBalanceAccounting
                 End If
                 Return
             End If
-            con = New SqlConnection(cs)
+            con = New OdbcConnection(cs)
             con.Open()
-            cmd = New SqlCommand("Select Name,CASE WHEN (Sum(Debit)-Sum(Credit))<= 0 THEN 0 ELSE (Sum(Debit)-Sum(Credit)) END AS Debit,CASE WHEN (Sum(Credit)-Sum(Debit))<= 0 THEN 0 ELSE (Sum(Credit)-Sum(debit)) END AS Credit from LedgerBook where  Date >=@d1 and Date < @d2 Group By Name order by Name", con)
+            cmd = New OdbcCommand("Select Name,CASE WHEN (Sum(Debit)-Sum(Credit))<= 0 THEN 0 ELSE (Sum(Debit)-Sum(Credit)) END AS Debit,CASE WHEN (Sum(Credit)-Sum(Debit))<= 0 THEN 0 ELSE (Sum(Credit)-Sum(debit)) END AS Credit from LedgerBook where  Date >=@d1 and Date < @d2 Group By Name order by Name", con)
             cmd.Parameters.Add("@d1", SqlDbType.DateTime, 30, "Date").Value = dtpDateFrom.Value.Date
             cmd.Parameters.Add("@d2", SqlDbType.DateTime, 30, "Date").Value = dtpDateTo.Value.Date.AddDays(1)
-            adp = New SqlDataAdapter(cmd)
+            adp = New OdbcDataAdapter(cmd)
             dtable = New DataTable()
             adp.Fill(dtable)
             con.Close()

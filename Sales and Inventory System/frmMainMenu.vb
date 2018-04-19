@@ -1,4 +1,4 @@
-﻿Imports System.Data.SqlClient
+﻿Imports System.Data.Odbc
 Imports System.IO
 
 Imports Microsoft.SqlServer.Management.Smo
@@ -23,10 +23,10 @@ Public Class frmMainMenu
             Filename = objdlg.FileName
             Cursor = Cursors.WaitCursor
             Timer2.Enabled = True
-            con = New SqlConnection(cs)
+            con = New OdbcConnection(cs)
             con.Open()
             Dim cb As String = "backup database SIS_DB to disk='" & Filename & "'with init,stats=10"
-            cmd = New SqlCommand(cb)
+            cmd = New OdbcCommand(cb)
             cmd.Connection = con
             cmd.ExecuteReader()
             con.Close()
@@ -152,11 +152,11 @@ Public Class frmMainMenu
     End Sub
 
     Private Sub CategoryToolStripMenuItem_Click(sender As System.Object, e As System.EventArgs) Handles CategoryToolStripMenuItem.Click
-     
+
     End Sub
 
     Private Sub SubCategoryToolStripMenuItem_Click(sender As System.Object, e As System.EventArgs) Handles SubCategoryToolStripMenuItem.Click
-      
+
     End Sub
 
     Private Sub SupplierToolStripMenuItem_Click(sender As System.Object, e As System.EventArgs) Handles SupplierToolStripMenuItem.Click
@@ -175,7 +175,7 @@ Public Class frmMainMenu
 
 
     Private Sub StockToolStripMenuItem_Click(sender As System.Object, e As System.EventArgs) Handles StockToolStripMenuItem.Click
-     
+
     End Sub
 
 
@@ -289,11 +289,11 @@ Public Class frmMainMenu
     End Sub
 
     Private Sub ContactsToolStripMenuItem_Click(sender As System.Object, e As System.EventArgs) Handles ContactsToolStripMenuItem.Click
-       
+
     End Sub
 
     Private Sub IndividualToolStripMenuItem1_Click(sender As System.Object, e As System.EventArgs)
-       
+
     End Sub
 
     Private Sub ProductToolStripMenuItem_Click(sender As System.Object, e As System.EventArgs) Handles ProductToolStripMenuItem.Click
@@ -316,7 +316,7 @@ Public Class frmMainMenu
 
     End Sub
 
-  
+
     Private Sub QuotationToolStripMenuItem1_Click(sender As System.Object, e As System.EventArgs)
 
     End Sub
@@ -329,7 +329,7 @@ Public Class frmMainMenu
     End Sub
 
     Private Sub ProductsRepairToolStripMenuItem_Click(sender As System.Object, e As System.EventArgs) Handles ProductsRepairToolStripMenuItem.Click
-       
+
     End Sub
 
     Private Sub BillingProductsServiceToolStripMenuItem_Click(sender As System.Object, e As System.EventArgs)
@@ -396,7 +396,7 @@ Public Class frmMainMenu
     End Sub
 
     Private Sub PaymentToolStripMenuItem_Click(sender As System.Object, e As System.EventArgs) Handles PaymentToolStripMenuItem.Click
-       
+
     End Sub
 
     Private Sub PaymentsToolStripMenuItem_Click(sender As System.Object, e As System.EventArgs)
@@ -425,7 +425,7 @@ Public Class frmMainMenu
     End Sub
 
     Private Sub SalesmanToolStripMenuItem3_Click(sender As System.Object, e As System.EventArgs) Handles SalesmanToolStripMenuItem3.Click
-      
+
     End Sub
 
     Private Sub SalesmanLedgerToolStripMenuItem_Click(sender As System.Object, e As System.EventArgs)
@@ -441,7 +441,7 @@ Public Class frmMainMenu
     End Sub
 
     Private Sub SendSMSToolStripMenuItem_Click(sender As System.Object, e As System.EventArgs) Handles SendSMSToolStripMenuItem.Click
-     
+
     End Sub
 
     Private Sub CreditTermsToolStripMenuItem_Click(sender As System.Object, e As System.EventArgs)
@@ -464,11 +464,11 @@ Public Class frmMainMenu
             If OpenFileDialog1.ShowDialog() = DialogResult.OK Then
                 Cursor = Cursors.WaitCursor
                 Timer2.Enabled = True
-                SqlConnection.ClearAllPools()
-                con = New SqlConnection(cs)
+                OdbcConnection.ReleaseObjectPool()
+                con = New OdbcConnection(cs)
                 con.Open()
                 Dim cb As String = "USE Master ALTER DATABASE SIS_DB SET Single_User WITH Rollback Immediate Restore database SIS_DB FROM disk='" & OpenFileDialog1.FileName & "' WITH REPLACE ALTER DATABASE SIS_DB SET Multi_User "
-                cmd = New SqlCommand(cb)
+                cmd = New OdbcCommand(cb)
                 cmd.Connection = con
                 cmd.ExecuteReader()
                 con.Close()

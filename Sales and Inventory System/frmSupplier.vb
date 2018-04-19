@@ -1,4 +1,4 @@
-﻿Imports System.Data.SqlClient
+﻿Imports System.Data.Odbc
 Imports System.IO
 
 Public Class frmSupplier
@@ -26,12 +26,12 @@ Public Class frmSupplier
         Me.Close()
     End Sub
     Private Function GenerateID() As String
-        con = New SqlConnection(cs)
+        con = New OdbcConnection(cs)
         Dim value As String = "0000"
         Try
             ' Fetch the latest ID from the database
             con.Open()
-            cmd = New SqlCommand("SELECT TOP 1 ID FROM Supplier ORDER BY ID DESC", con)
+            cmd = New OdbcCommand("SELECT TOP 1 ID FROM Supplier ORDER BY ID DESC", con)
             rdr = cmd.ExecuteReader(CommandBehavior.CloseConnection)
             If rdr.HasRows Then
                 rdr.Read()
@@ -89,10 +89,10 @@ Public Class frmSupplier
                 txtContactNo.Focus()
                 Exit Sub
             End If
-            con = New SqlConnection(cs)
+            con = New OdbcConnection(cs)
             con.Open()
             Dim cb1 As String = "insert into Suppliers(T_ID, TransactionID, Date, PaymentMode, SupplierID, Amount,Remarks) VALUES (@d1,@d2,@d3,@d4,@d5,@d6,@d7)"
-            cmd = New SqlCommand(cb1)
+            cmd = New OdbcCommand(cb1)
             cmd.Parameters.AddWithValue("@d1", Val(txtT_ID.Text))
             cmd.Parameters.AddWithValue("@d2", "")
             cmd.Parameters.AddWithValue("@d3", System.DateTime.Now.Date)
@@ -113,12 +113,12 @@ Public Class frmSupplier
         End Try
     End Sub
     Private Function GenerateID1() As String
-        con = New SqlConnection(cs)
+        con = New OdbcConnection(cs)
         Dim value As String = "0000"
         Try
             ' Fetch the latest ID from the database
             con.Open()
-            cmd = New SqlCommand("SELECT TOP 1 T_ID FROM Payment ORDER BY T_ID DESC", con)
+            cmd = New OdbcCommand("SELECT TOP 1 T_ID FROM Payment ORDER BY T_ID DESC", con)
             rdr = cmd.ExecuteReader(CommandBehavior.CloseConnection)
             If rdr.HasRows Then
                 rdr.Read()
@@ -164,10 +164,10 @@ Public Class frmSupplier
     Private Sub DeleteRecord()
         Try
             Dim RowsAffected As Integer = 0
-            con = New SqlConnection(cs)
+            con = New OdbcConnection(cs)
             con.Open()
             Dim cl As String = "SELECT Supplier.ID FROM Supplier INNER JOIN Stock ON Supplier.ID = Stock.SupplierID where Supplier.ID=@d1"
-            cmd = New SqlCommand(cl)
+            cmd = New OdbcCommand(cl)
             cmd.Connection = con
             cmd.Parameters.AddWithValue("@d1", Val(txtID.Text))
             rdr = cmd.ExecuteReader()
@@ -179,10 +179,10 @@ Public Class frmSupplier
                 Exit Sub
             End If
             con.Close()
-            con = New SqlConnection(cs)
+            con = New OdbcConnection(cs)
             con.Open()
             Dim cl1 As String = "SELECT Supplier.ID FROM Supplier INNER JOIN Payment ON Supplier.ID = Payment.SupplierID where Supplier.ID=@d1 and Amount >0"
-            cmd = New SqlCommand(cl1)
+            cmd = New OdbcCommand(cl1)
             cmd.Connection = con
             cmd.Parameters.AddWithValue("@d1", Val(txtID.Text))
             rdr = cmd.ExecuteReader()
@@ -194,17 +194,17 @@ Public Class frmSupplier
                 Exit Sub
             End If
             con.Close()
-            con = New SqlConnection(cs)
+            con = New OdbcConnection(cs)
             con.Open()
             Dim cq1 As String = "delete from Payment where SupplierID =" & txtID.Text & " and Amount=0"
-            cmd = New SqlCommand(cq1)
+            cmd = New OdbcCommand(cq1)
             cmd.Connection = con
             cmd.ExecuteNonQuery()
             con.Close()
-            con = New SqlConnection(cs)
+            con = New OdbcConnection(cs)
             con.Open()
             Dim cq As String = "delete from Supplier where ID =" & txtID.Text & ""
-            cmd = New SqlCommand(cq)
+            cmd = New OdbcCommand(cq)
             cmd.Connection = con
             RowsAffected = cmd.ExecuteNonQuery()
             If RowsAffected > 0 Then
@@ -253,39 +253,39 @@ Public Class frmSupplier
         End If
 
         Try
-            con = New SqlConnection(cs)
+            con = New OdbcConnection(cs)
             con.Open()
             Dim cb1 As String = "update LedgerBook set [Name]=@d3 where PartyID=@d1 and Name=@d2"
-            cmd = New SqlCommand(cb1)
+            cmd = New OdbcCommand(cb1)
             cmd.Parameters.AddWithValue("@d1", txtSupplierID.Text)
             cmd.Parameters.AddWithValue("@d2", txtSupName.Text)
             cmd.Parameters.AddWithValue("@d3", txtSupplierName.Text)
             cmd.Connection = con
             cmd.ExecuteNonQuery()
             con.Close()
-            con = New SqlConnection(cs)
+            con = New OdbcConnection(cs)
             con.Open()
             Dim cb3 As String = "update SupplierLedgerBook set [Name]=@d3 where PartyID=@d1 and Name=@d2"
-            cmd = New SqlCommand(cb3)
+            cmd = New OdbcCommand(cb3)
             cmd.Parameters.AddWithValue("@d1", txtSupplierID.Text)
             cmd.Parameters.AddWithValue("@d2", txtSupName.Text)
             cmd.Parameters.AddWithValue("@d3", txtSupplierName.Text)
             cmd.Connection = con
             cmd.ExecuteNonQuery()
             con.Close()
-            con = New SqlConnection(cs)
+            con = New OdbcConnection(cs)
             con.Open()
             Dim cb2 As String = "update LedgerBook set Label=@d1 where Label=@d2"
-            cmd = New SqlCommand(cb2)
+            cmd = New OdbcCommand(cb2)
             cmd.Parameters.AddWithValue("@d1", "Payment to " & txtSupplierName.Text & "")
             cmd.Parameters.AddWithValue("@d2", "Payment to " & txtSupName.Text & "")
             cmd.Connection = con
             cmd.ExecuteNonQuery()
             con.Close()
-            con = New SqlConnection(cs)
+            con = New OdbcConnection(cs)
             con.Open()
             Dim cb As String = "update supplier set SupplierID=@d2,[Name]=@d3, Address=@d5,City=@d6, ContactNo=@d7, EmailID=@d8,Remarks=@d9,State=@d10,ZipCode=@d11 where ID=@d1"
-            cmd = New SqlCommand(cb)
+            cmd = New OdbcCommand(cb)
             cmd.Parameters.AddWithValue("@d2", txtSupplierID.Text)
             cmd.Parameters.AddWithValue("@d3", txtSupplierName.Text)
             cmd.Parameters.AddWithValue("@d5", txtAddress.Text)
@@ -314,7 +314,7 @@ Public Class frmSupplier
 
 
     Private Sub btnGetData_Click(sender As System.Object, e As System.EventArgs) Handles btnGetData.Click
-      
+
     End Sub
 
     Private Sub frmSupplier_Load(sender As System.Object, e As System.EventArgs) Handles MyBase.Load
@@ -322,10 +322,10 @@ Public Class frmSupplier
     End Sub
     Sub fillState()
         Try
-            con = New SqlConnection(cs)
+            con = New OdbcConnection(cs)
             con.Open()
-            adp = New SqlDataAdapter()
-            adp.SelectCommand = New SqlCommand("SELECT distinct RTRIM(State) FROM Supplier order by 1", con)
+            adp = New OdbcDataAdapter()
+            adp.SelectCommand = New OdbcCommand("SELECT distinct RTRIM(State) FROM Supplier order by 1", con)
             ds = New DataSet("ds")
             adp.Fill(ds)
             dtable = ds.Tables(0)

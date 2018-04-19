@@ -1,4 +1,4 @@
-﻿Imports System.Data.SqlClient
+﻿Imports System.Data.Odbc
 
 
 Public Class frmSalesmanLedger
@@ -6,10 +6,10 @@ Public Class frmSalesmanLedger
     Dim a, b, c As String
     Sub fillSalesman()
         Try
-            con = New SqlConnection(cs)
+            con = New OdbcConnection(cs)
             con.Open()
-            adp = New SqlDataAdapter()
-            adp.SelectCommand = New SqlCommand("SELECT RTRIM(Name) FROM Salesman order by 1", con)
+            adp = New OdbcDataAdapter()
+            adp.SelectCommand = New OdbcCommand("SELECT RTRIM(Name) FROM Salesman order by 1", con)
             ds = New DataSet("ds")
             adp.Fill(ds)
             dtable = ds.Tables(0)
@@ -49,10 +49,10 @@ Public Class frmSalesmanLedger
                 cmbSalesman.Focus()
                 Exit Sub
             End If
-            con = New SqlConnection(cs)
+            con = New OdbcConnection(cs)
             con.Open()
             Dim ct As String = "Select * FROM InvoiceInfo INNER JOIN SalesMan ON InvoiceInfo.SalesmanID = SalesMan.SM_ID INNER JOIN Salesman_Commission ON InvoiceInfo.Inv_ID = Salesman_Commission.InvoiceID where InvoiceDate between @d2 and @d3 and Salesman_ID=@d1"
-            cmd = New SqlCommand(ct)
+            cmd = New OdbcCommand(ct)
             cmd.Parameters.AddWithValue("@d1", txtSalesmanID.Text)
             cmd.Parameters.Add("@d2", SqlDbType.DateTime, 30, "Date").Value = dtpDateFrom.Value.Date
             cmd.Parameters.Add("@d3", SqlDbType.DateTime, 30, "Date").Value = dtpDateTo.Value.Date
@@ -69,11 +69,11 @@ Public Class frmSalesmanLedger
             Cursor = Cursors.WaitCursor
             Timer1.Enabled = True
             '  Dim rpt As New rptSalesmanLedger 'The report you created.
-            Dim myConnection As SqlConnection
-            Dim MyCommand As New SqlCommand()
-            Dim myDA As New SqlDataAdapter()
+            Dim myConnection As OdbcConnection
+            Dim MyCommand As New OdbcCommand()
+            Dim myDA As New OdbcDataAdapter()
             Dim myDS As New DataSet 'The DataSet you created.
-            myConnection = New SqlConnection(cs)
+            myConnection = New OdbcConnection(cs)
             MyCommand.Connection = myConnection
             MyCommand.CommandText = "SELECT InvoiceInfo.Inv_ID, InvoiceInfo.InvoiceNo, InvoiceInfo.InvoiceDate, InvoiceInfo.CustomerID, InvoiceInfo.SalesmanID, InvoiceInfo.GrandTotal, InvoiceInfo.TotalPaid, InvoiceInfo.Balance, InvoiceInfo.Remarks,SalesMan.SM_ID, SalesMan.SalesMan_ID, SalesMan.Name, SalesMan.Address, SalesMan.City, SalesMan.State, SalesMan.ZipCode, SalesMan.ContactNo, SalesMan.EmailID, SalesMan.Remarks AS Expr1,SalesMan.Photo, SalesMan.CommissionPer, Salesman_Commission.ID, Salesman_Commission.InvoiceID, Salesman_Commission.CommissionPer AS Expr2, Salesman_Commission.Commission FROM InvoiceInfo INNER JOIN SalesMan ON InvoiceInfo.SalesmanID = SalesMan.SM_ID INNER JOIN Salesman_Commission ON InvoiceInfo.Inv_ID = Salesman_Commission.InvoiceID where InvoiceDate between @d2 and @d3 and Salesman_ID=@d1 order by Inv_ID"
             MyCommand.Parameters.AddWithValue("@d1", txtSalesmanID.Text)
@@ -84,7 +84,7 @@ Public Class frmSalesmanLedger
             myDA.Fill(myDS, "InvoiceInfo")
             myDA.Fill(myDS, "Salesman")
             myDA.Fill(myDS, "Salesman_Commission")
-          
+
             frmReport.ShowDialog()
         Catch ex As Exception
             MessageBox.Show(ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error)
@@ -101,7 +101,7 @@ Public Class frmSalesmanLedger
             b = ""
             c = ""
             txtSalesmanID.Text = ""
-            con = New SqlConnection(cs)
+            con = New OdbcConnection(cs)
             con.Open()
             cmd = con.CreateCommand()
             cmd.CommandText = "SELECT RTRIM(Salesman_ID),RTRIM(Address),RTRIM(City),RTRIM(ContactNo) FROM Salesman WHERE Name=@d1"

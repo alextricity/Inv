@@ -1,4 +1,4 @@
-﻿Imports System.Data.SqlClient
+﻿Imports System.Data.Odbc
 Public Class frmRegistration
     Dim st1 As String
     Sub Reset()
@@ -45,10 +45,10 @@ Public Class frmRegistration
             Return
         End If
         Try
-            con = New SqlConnection(cs)
+            con = New OdbcConnection(cs)
             con.Open()
             Dim ct As String = "select userid from registration where userid=@d1"
-            cmd = New SqlCommand(ct)
+            cmd = New OdbcCommand(ct)
             cmd.Parameters.AddWithValue("@d1", txtUserID.Text)
             cmd.Connection = con
             rdr = cmd.ExecuteReader()
@@ -67,7 +67,7 @@ Public Class frmRegistration
             Else
                 st1 = "No"
             End If
-             Dim st As String = "added the new user '" & txtUserID.Text & "'"
+            Dim st As String = "added the new user '" & txtUserID.Text & "'"
             LogFunc(lblUser.Text, st)
             MessageBox.Show("Successfully Registered", "User", MessageBoxButtons.OK, MessageBoxIcon.Information)
             btnSave.Enabled = False
@@ -94,10 +94,10 @@ Public Class frmRegistration
                 Exit Sub
             End If
             Dim RowsAffected As Integer = 0
-            con = New SqlConnection(cs)
+            con = New OdbcConnection(cs)
             con.Open()
             Dim cq As String = "delete from Registration where userid='" & txtUserID.Text & "'"
-            cmd = New SqlCommand(cq)
+            cmd = New OdbcCommand(cq)
             cmd.Connection = con
             RowsAffected = cmd.ExecuteNonQuery()
             If RowsAffected > 0 Then
@@ -162,9 +162,9 @@ Public Class frmRegistration
     End Sub
     Public Sub Getdata()
         Try
-            con = New SqlConnection(cs)
+            con = New OdbcConnection(cs)
             con.Open()
-            cmd = New SqlCommand("SELECT RTRIM(userid), RTRIM(UserType), RTRIM(Password), RTRIM(Name), RTRIM(EmailID), RTRIM(ContactNo),RTRIM(Active),JoiningDate from Registration order by JoiningDate", con)
+            cmd = New OdbcCommand("SELECT RTRIM(userid), RTRIM(UserType), RTRIM(Password), RTRIM(Name), RTRIM(EmailID), RTRIM(ContactNo),RTRIM(Active),JoiningDate from Registration order by JoiningDate", con)
             rdr = cmd.ExecuteReader(CommandBehavior.CloseConnection)
             dgw.Rows.Clear()
             While (rdr.Read() = True)
@@ -227,10 +227,10 @@ Public Class frmRegistration
             Return
         End If
         Try
-            con = New SqlConnection(cs)
+            con = New OdbcConnection(cs)
             con.Open()
             Dim ct As String = "select userid from registration where userid=@d1"
-            cmd = New SqlCommand(ct)
+            cmd = New OdbcCommand(ct)
             cmd.Parameters.AddWithValue("@d1", txtUserID.Text)
             cmd.Connection = con
             rdr = cmd.ExecuteReader()

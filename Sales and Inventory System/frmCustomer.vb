@@ -1,4 +1,4 @@
-﻿Imports System.Data.SqlClient
+﻿Imports System.Data.Odbc
 Imports System.IO
 
 Public Class frmCustomer
@@ -26,15 +26,15 @@ Public Class frmCustomer
         cmbState.Text = ""
     End Sub
     Private Sub btnClose_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles btnClose.Click
-      
+
     End Sub
     Private Function GenerateID() As String
-        con = New SqlConnection(cs)
+        con = New OdbcConnection(cs)
         Dim value As String = "0000"
         Try
             ' Fetch the latest ID from the database
             con.Open()
-            cmd = New SqlCommand("SELECT TOP 1 ID FROM Customer ORDER BY ID DESC", con)
+            cmd = New OdbcCommand("SELECT TOP 1 ID FROM Customer ORDER BY ID DESC", con)
             rdr = cmd.ExecuteReader(CommandBehavior.CloseConnection)
             If rdr.HasRows Then
                 rdr.Read()
@@ -97,10 +97,10 @@ Public Class frmCustomer
         End If
 
         Try
-            con = New SqlConnection(cs)
+            con = New OdbcConnection(cs)
             con.Open()
             Dim ct As String = "select RTRIM(ContactNo) from Customer where ContactNo=@d1"
-            cmd = New SqlCommand(ct)
+            cmd = New OdbcCommand(ct)
             cmd.Parameters.AddWithValue("@d1", txtContactNo.Text)
             cmd.Connection = con
             rdr = cmd.ExecuteReader()
@@ -119,10 +119,10 @@ Public Class frmCustomer
             If (rbFemale.Checked = True) Then
                 s = rbFemale.Text
             End If
-            con = New SqlConnection(cs)
+            con = New OdbcConnection(cs)
             con.Open()
             Dim cb As String = "insert into Customer(ID, CustomerID, [Name], Gender, Address, City, ContactNo, EmailID,Remarks,State,ZipCode,Photo,CustomerType) VALUES (@d1,@d2,@d3,@d4,@d5,@d6,@d7,@d8,@d9,@d10,@d11,@d12,'Regular')"
-            cmd = New SqlCommand(cb)
+            cmd = New OdbcCommand(cb)
             cmd.Parameters.AddWithValue("@d1", Val(txtID.Text))
             cmd.Parameters.AddWithValue("@d2", txtCustomerID.Text)
             cmd.Parameters.AddWithValue("@d3", txtCustomerName.Text)
@@ -133,7 +133,7 @@ Public Class frmCustomer
             Dim bmpImage As New Bitmap(Picture.Image)
             bmpImage.Save(ms, System.Drawing.Imaging.ImageFormat.Jpeg)
             Dim data As Byte() = ms.GetBuffer()
-            Dim p As New SqlParameter("@d12", SqlDbType.Image)
+            Dim p As New OdbcParameter("@d12", SqlDbType.Image)
             p.Value = data
             cmd.Parameters.Add(p)
             cmd.ExecuteNonQuery()
@@ -159,10 +159,10 @@ Public Class frmCustomer
     Private Sub DeleteRecord()
         Try
             Dim RowsAffected As Integer = 0
-            con = New SqlConnection(cs)
+            con = New OdbcConnection(cs)
             con.Open()
             Dim cl As String = "SELECT Customer.ID FROM Customer INNER JOIN InvoiceInfo ON Customer.ID = InvoiceInfo.CustomerID where Customer.ID=@d1"
-            cmd = New SqlCommand(cl)
+            cmd = New OdbcCommand(cl)
             cmd.Connection = con
             cmd.Parameters.AddWithValue("@d1", Val(txtID.Text))
             rdr = cmd.ExecuteReader()
@@ -174,10 +174,10 @@ Public Class frmCustomer
                 Exit Sub
             End If
             con.Close()
-            con = New SqlConnection(cs)
+            con = New OdbcConnection(cs)
             con.Open()
             Dim cl1 As String = "SELECT Customer.ID FROM Customer INNER JOIN Quotation ON Customer.ID = Quotation.CustomerID where Customer.ID=@d1"
-            cmd = New SqlCommand(cl1)
+            cmd = New OdbcCommand(cl1)
             cmd.Connection = con
             cmd.Parameters.AddWithValue("@d1", Val(txtID.Text))
             rdr = cmd.ExecuteReader()
@@ -189,10 +189,10 @@ Public Class frmCustomer
                 Exit Sub
             End If
             con.Close()
-            con = New SqlConnection(cs)
+            con = New OdbcConnection(cs)
             con.Open()
             Dim cl2 As String = "SELECT Customer.ID FROM Customer INNER JOIN Service ON Customer.ID = Service.CustomerID where Customer.ID=@d1"
-            cmd = New SqlCommand(cl2)
+            cmd = New OdbcCommand(cl2)
             cmd.Connection = con
             cmd.Parameters.AddWithValue("@d1", Val(txtID.Text))
             rdr = cmd.ExecuteReader()
@@ -205,10 +205,10 @@ Public Class frmCustomer
             End If
             con.Close()
 
-            con = New SqlConnection(cs)
+            con = New OdbcConnection(cs)
             con.Open()
             Dim cq As String = "delete from Customer where ID =" & txtID.Text & ""
-            cmd = New SqlCommand(cq)
+            cmd = New OdbcCommand(cq)
             cmd.Connection = con
             RowsAffected = cmd.ExecuteNonQuery()
             If RowsAffected > 0 Then
@@ -261,10 +261,10 @@ Public Class frmCustomer
         End If
 
         Try
-            con = New SqlConnection(cs)
+            con = New OdbcConnection(cs)
             con.Open()
             Dim cb1 As String = "update LedgerBook set [Name]=@d3 where PartyID=@d1 and Name=@d2"
-            cmd = New SqlCommand(cb1)
+            cmd = New OdbcCommand(cb1)
             cmd.Parameters.AddWithValue("@d1", txtCustomerID.Text)
             cmd.Parameters.AddWithValue("@d2", txtCustName.Text)
             cmd.Parameters.AddWithValue("@d3", txtCustomerName.Text)
@@ -277,10 +277,10 @@ Public Class frmCustomer
             If (rbFemale.Checked = True) Then
                 s = rbFemale.Text
             End If
-            con = New SqlConnection(cs)
+            con = New OdbcConnection(cs)
             con.Open()
             Dim cb As String = "update Customer set CustomerID=@d2,[Name]=@d3,Gender=@d4, Address=@d5,City=@d6, ContactNo=@d7, EmailID=@d8,Remarks=@d9,State=@d10,ZipCode=@d11,Photo=@d12,CustomerType='Regular' where ID=@d1"
-            cmd = New SqlCommand(cb)
+            cmd = New OdbcCommand(cb)
             cmd.Parameters.AddWithValue("@d2", txtCustomerID.Text)
             cmd.Parameters.AddWithValue("@d3", txtCustomerName.Text)
             cmd.Parameters.AddWithValue("@d4", s)
@@ -290,7 +290,7 @@ Public Class frmCustomer
             Dim bmpImage As New Bitmap(Picture.Image)
             bmpImage.Save(ms, System.Drawing.Imaging.ImageFormat.Jpeg)
             Dim data As Byte() = ms.GetBuffer()
-            Dim p As New SqlParameter("@d12", SqlDbType.Image)
+            Dim p As New OdbcParameter("@d12", SqlDbType.Image)
             p.Value = data
             cmd.Parameters.Add(p)
             cmd.Parameters.AddWithValue("@d1", Val(txtID.Text))
@@ -311,18 +311,18 @@ Public Class frmCustomer
 
 
     Private Sub BStartCapture_Click(sender As System.Object, e As System.EventArgs) Handles BStartCapture.Click
-      
+
     End Sub
 
     Private Sub btnGetData_Click(sender As System.Object, e As System.EventArgs) Handles btnGetData.Click
-      
+
     End Sub
     Sub fillState()
         Try
-            con = New SqlConnection(cs)
+            con = New OdbcConnection(cs)
             con.Open()
-            adp = New SqlDataAdapter()
-            adp.SelectCommand = New SqlCommand("SELECT distinct RTRIM(State) FROM Customer order by 1", con)
+            adp = New OdbcDataAdapter()
+            adp.SelectCommand = New OdbcCommand("SELECT distinct RTRIM(State) FROM Customer order by 1", con)
             dtable = ds.Tables(0)
             cmbState.Items.Clear()
             For Each drow As DataRow In dtable.Rows

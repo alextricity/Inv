@@ -1,4 +1,4 @@
-﻿Imports System.Data.SqlClient
+﻿Imports System.Data.Odbc
 
 Imports System.IO
 
@@ -28,11 +28,11 @@ Public Class frmPurchaseReport
             Cursor = Cursors.WaitCursor
             Timer1.Enabled = True
             Dim rpt As New rptPurchase 'The report you created.
-            Dim myConnection As SqlConnection
-            Dim MyCommand As New SqlCommand()
-            Dim myDA As New SqlDataAdapter()
+            Dim myConnection As OdbcConnection
+            Dim MyCommand As New OdbcCommand()
+            Dim myDA As New OdbcDataAdapter()
             Dim myDS, myDS1 As New DataSet 'The DataSet you created.
-            myConnection = New SqlConnection(cs)
+            myConnection = New OdbcConnection(cs)
             MyCommand.Connection = myConnection
             MyCommand.CommandText = "SELECT Distinct Stock.ST_ID, Stock.InvoiceNo, Stock.Date, Stock.SupplierID, Stock.GrandTotal, Stock.TotalPayment, Stock.PaymentDue, Stock.Remarks, Stock_Product.SP_ID, Stock_Product.StockID, Stock_Product.ProductID,Stock_Product.Qty, Stock_Product.Price, Stock_Product.TotalAmount, Supplier.ID, Supplier.SupplierID AS Expr1, Supplier.Name, Supplier.Address, Supplier.City, Supplier.State, Supplier.ZipCode,Supplier.ContactNo, Supplier.EmailID, Supplier.Remarks AS Expr2, Product.PID, Product.ProductCode, Product.ProductName, Product.SubCategoryID, Product.Description, Product.CostPrice, Product.SellingPrice,Product.Discount, Product.VAT, Product.ReorderPoint FROM Stock INNER JOIN Stock_Product ON Stock.ST_ID = Stock_Product.StockID INNER JOIN Supplier ON Stock.SupplierID = Supplier.ID INNER JOIN Product ON Stock_Product.ProductID = Product.PID where Supplier.Name=@d1"
             MyCommand.Parameters.AddWithValue("@d1", cmbSupplier.Text)
@@ -42,10 +42,10 @@ Public Class frmPurchaseReport
             myDA.Fill(myDS, "Stock_Product")
             myDA.Fill(myDS, "Product")
             myDA.Fill(myDS, "Supplier")
-            con = New SqlConnection(cs)
+            con = New OdbcConnection(cs)
             con.Open()
             Dim ct As String = "select ISNULL(sum(GrandTotal),0),ISNULL(sum(TotalPayment),0),ISNULL(sum(PaymentDue),0) from Stock,Supplier where Supplier.ID=Stock.SupplierID and Name=@d1"
-            cmd = New SqlCommand(ct)
+            cmd = New OdbcCommand(ct)
             cmd.Parameters.AddWithValue("@d1", cmbSupplier.Text)
             cmd.Connection = con
             rdr = cmd.ExecuteReader()
@@ -55,11 +55,11 @@ Public Class frmPurchaseReport
                 c = rdr.GetValue(2)
             End While
             con.Close()
-            con = New SqlConnection(cs)
+            con = New OdbcConnection(cs)
             con.Open()
-            cmd = New SqlCommand("SELECT CONVERT(varchar(10),YEAR(Date)) AS Year, SUM(GrandTotal) AS GrandTotal from Stock,Supplier where Supplier.ID=Stock.SupplierID and Name=@d1 GROUP BY YEAR(Date) ORDER BY Year", con)
+            cmd = New OdbcCommand("SELECT CONVERT(varchar(10),YEAR(Date)) AS Year, SUM(GrandTotal) AS GrandTotal from Stock,Supplier where Supplier.ID=Stock.SupplierID and Name=@d1 GROUP BY YEAR(Date) ORDER BY Year", con)
             cmd.Parameters.AddWithValue("@d1", cmbSupplier.Text)
-            adp = New SqlDataAdapter(cmd)
+            adp = New OdbcDataAdapter(cmd)
             dtable = New DataTable()
             adp.Fill(dtable)
             con.Close()
@@ -90,11 +90,11 @@ Public Class frmPurchaseReport
             Cursor = Cursors.WaitCursor
             Timer1.Enabled = True
             Dim rpt As New rptPurchase 'The report you created.
-            Dim myConnection As SqlConnection
-            Dim MyCommand As New SqlCommand()
-            Dim myDA As New SqlDataAdapter()
+            Dim myConnection As OdbcConnection
+            Dim MyCommand As New OdbcCommand()
+            Dim myDA As New OdbcDataAdapter()
             Dim myDS, myDS1 As New DataSet 'The DataSet you created.
-            myConnection = New SqlConnection(cs)
+            myConnection = New OdbcConnection(cs)
             MyCommand.Connection = myConnection
             MyCommand.CommandText = "SELECT Distinct Stock.ST_ID, Stock.InvoiceNo, Stock.Date, Stock.SupplierID, Stock.GrandTotal, Stock.TotalPayment, Stock.PaymentDue, Stock.Remarks, Stock_Product.SP_ID, Stock_Product.StockID, Stock_Product.ProductID,Stock_Product.Qty, Stock_Product.Price, Stock_Product.TotalAmount, Supplier.ID, Supplier.SupplierID AS Expr1, Supplier.Name, Supplier.Address, Supplier.City, Supplier.State, Supplier.ZipCode,Supplier.ContactNo, Supplier.EmailID, Supplier.Remarks AS Expr2, Product.PID, Product.ProductCode, Product.ProductName, Product.SubCategoryID, Product.Description, Product.CostPrice, Product.SellingPrice,Product.Discount, Product.VAT, Product.ReorderPoint FROM Stock INNER JOIN Stock_Product ON Stock.ST_ID = Stock_Product.StockID INNER JOIN Supplier ON Stock.SupplierID = Supplier.ID INNER JOIN Product ON Stock_Product.ProductID = Product.PID where Stock.Date between @d1 and @d2 order by Stock.Date"
             MyCommand.Parameters.Add("@d1", SqlDbType.DateTime, 30, "Date").Value = dtpDateFrom.Value.Date
@@ -105,10 +105,10 @@ Public Class frmPurchaseReport
             myDA.Fill(myDS, "Stock_Product")
             myDA.Fill(myDS, "Product")
             myDA.Fill(myDS, "Supplier")
-            con = New SqlConnection(cs)
+            con = New OdbcConnection(cs)
             con.Open()
             Dim ct As String = "select ISNULL(sum(GrandTotal),0),ISNULL(sum(TotalPayment),0),ISNULL(sum(PaymentDue),0) from Stock,Supplier where Supplier.ID=Stock.SupplierID and Date between @d3 and @d4"
-            cmd = New SqlCommand(ct)
+            cmd = New OdbcCommand(ct)
             cmd.Parameters.Add("@d3", SqlDbType.DateTime, 30, "Date").Value = dtpDateFrom.Value.Date
             cmd.Parameters.Add("@d4", SqlDbType.DateTime, 30, "Date").Value = dtpDateTo.Value.Date
             cmd.Connection = con
@@ -119,12 +119,12 @@ Public Class frmPurchaseReport
                 c = rdr.GetValue(2)
             End While
             con.Close()
-            con = New SqlConnection(cs)
+            con = New OdbcConnection(cs)
             con.Open()
-            cmd = New SqlCommand("SELECT CONVERT(varchar(10),YEAR(Date)) AS Year, SUM(GrandTotal) AS GrandTotal FROM Stock where date between @d3 and @d4 GROUP BY YEAR(Date) ORDER BY Year", con)
+            cmd = New OdbcCommand("SELECT CONVERT(varchar(10),YEAR(Date)) AS Year, SUM(GrandTotal) AS GrandTotal FROM Stock where date between @d3 and @d4 GROUP BY YEAR(Date) ORDER BY Year", con)
             cmd.Parameters.Add("@d3", SqlDbType.DateTime, 30, "Date").Value = dtpDateFrom.Value.Date
             cmd.Parameters.Add("@d4", SqlDbType.DateTime, 30, "Date").Value = dtpDateTo.Value.Date
-            adp = New SqlDataAdapter(cmd)
+            adp = New OdbcDataAdapter(cmd)
             dtable = New DataTable()
             adp.Fill(dtable)
             con.Close()
@@ -147,10 +147,10 @@ Public Class frmPurchaseReport
 
     Sub fillSupplier()
         Try
-            con = New SqlConnection(cs)
+            con = New OdbcConnection(cs)
             con.Open()
-            adp = New SqlDataAdapter()
-            adp.SelectCommand = New SqlCommand("SELECT RTRIM(Name) FROM Supplier order by Name", con)
+            adp = New OdbcDataAdapter()
+            adp.SelectCommand = New OdbcCommand("SELECT RTRIM(Name) FROM Supplier order by Name", con)
             ds = New DataSet("ds")
             adp.Fill(ds)
             dtable = ds.Tables(0)

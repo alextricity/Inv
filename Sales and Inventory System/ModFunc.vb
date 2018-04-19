@@ -1,4 +1,4 @@
-﻿Imports System.Data.SqlClient
+﻿Imports System.Data.Odbc
 Imports System.Security.Cryptography
 Imports System.IO
 Imports System.Text
@@ -19,10 +19,10 @@ Module ModFunc
         End Try
     End Function
     Sub SMS(ByVal st1 As String)
-        con = New SqlConnection(cs)
+        con = New OdbcConnection(cs)
         con.Open()
         Dim cb As String = "insert into SMS(Message,Date) VALUES (@d1,@d2)"
-        cmd = New SqlCommand(cb)
+        cmd = New OdbcCommand(cb)
         cmd.Connection = con
         cmd.Parameters.AddWithValue("@d1", st1)
         cmd.Parameters.AddWithValue("@d2", System.DateTime.Now)
@@ -30,10 +30,10 @@ Module ModFunc
         con.Close()
     End Sub
     Sub LogFunc(ByVal st1 As String, ByVal st2 As String)
-        con = New SqlConnection(cs)
+        con = New OdbcConnection(cs)
         con.Open()
         Dim cb As String = "insert into Logs(UserID,Date,Operation) VALUES (@d1,@d2,@d3)"
-        cmd = New SqlCommand(cb)
+        cmd = New OdbcCommand(cb)
         cmd.Connection = con
         cmd.Parameters.AddWithValue("@d1", st1)
         cmd.Parameters.AddWithValue("@d2", System.DateTime.Now)
@@ -114,10 +114,10 @@ Module ModFunc
         End Try
     End Sub
     Sub LedgerSave(ByVal a As DateTime, ByVal b As String, ByVal c As String, ByVal d As String, ByVal e As Decimal, ByVal f As Decimal, ByVal g As String)
-        con = New SqlConnection(cs)
+        con = New OdbcConnection(cs)
         con.Open()
         Dim cb As String = "insert into LedgerBook(Date, Name, LedgerNo, Label,Debit,Credit,PartyID) Values (@d1,@d2,@d3,@d4,@d5,@d6,@d7)"
-        cmd = New SqlCommand(cb)
+        cmd = New OdbcCommand(cb)
         cmd.Parameters.AddWithValue("@d1", a)
         cmd.Parameters.AddWithValue("@d2", b)
         cmd.Parameters.AddWithValue("@d3", c)
@@ -130,20 +130,20 @@ Module ModFunc
         con.Close()
     End Sub
     Sub LedgerDelete(ByVal a As String)
-        con = New SqlConnection(cs)
+        con = New OdbcConnection(cs)
         con.Open()
         Dim cq As String = "delete from LedgerBook where LedgerNo=@d1"
-        cmd = New SqlCommand(cq)
+        cmd = New OdbcCommand(cq)
         cmd.Parameters.AddWithValue("@d1", a)
         cmd.Connection = con
         cmd.ExecuteReader()
         con.Close()
     End Sub
     Sub LedgerUpdate(ByVal a As DateTime, ByVal b As String, ByVal e As Decimal, ByVal f As Decimal, ByVal g As String, ByVal h As String)
-        con = New SqlConnection(cs)
+        con = New OdbcConnection(cs)
         con.Open()
         Dim cb As String = "Update LedgerBook set Date=@d1, Name=@d2,Debit=@d3,Credit=@d4 where LedgerNo=@d5 and Label=@d6"
-        cmd = New SqlCommand(cb)
+        cmd = New OdbcCommand(cb)
         cmd.Parameters.AddWithValue("@d1", a)
         cmd.Parameters.AddWithValue("@d2", b)
         cmd.Parameters.AddWithValue("@d3", e)
@@ -155,10 +155,10 @@ Module ModFunc
         con.Close()
     End Sub
     Sub SupplierLedgerSave(ByVal a As DateTime, ByVal b As String, ByVal c As String, ByVal d As String, ByVal e As Decimal, ByVal f As Decimal, ByVal g As String)
-        con = New SqlConnection(cs)
+        con = New OdbcConnection(cs)
         con.Open()
         Dim cb As String = "insert into SupplierLedgerBook(Date, Name, LedgerNo, Label,Debit,Credit,PartyID) Values (@d1,@d2,@d3,@d4,@d5,@d6,@d7)"
-        cmd = New SqlCommand(cb)
+        cmd = New OdbcCommand(cb)
         cmd.Parameters.AddWithValue("@d1", a)
         cmd.Parameters.AddWithValue("@d2", b)
         cmd.Parameters.AddWithValue("@d3", c)
@@ -171,20 +171,20 @@ Module ModFunc
         con.Close()
     End Sub
     Sub SupplierLedgerDelete(ByVal a As String)
-        con = New SqlConnection(cs)
+        con = New OdbcConnection(cs)
         con.Open()
         Dim cq As String = "delete from SupplierLedgerBook where LedgerNo=@d1"
-        cmd = New SqlCommand(cq)
+        cmd = New OdbcCommand(cq)
         cmd.Parameters.AddWithValue("@d1", a)
         cmd.Connection = con
         cmd.ExecuteReader()
         con.Close()
     End Sub
     Sub SupplierLedgerUpdate(ByVal a As DateTime, ByVal b As String, ByVal e As Decimal, ByVal f As Decimal, ByVal g As String, ByVal h As String)
-        con = New SqlConnection(cs)
+        con = New OdbcConnection(cs)
         con.Open()
         Dim cb As String = "Update SupplierLedgerBook set Date=@d1, Name=@d2,Debit=@d3,Credit=@d4 where LedgerNo=@d5 and Label=@d6"
-        cmd = New SqlCommand(cb)
+        cmd = New OdbcCommand(cb)
         cmd.Parameters.AddWithValue("@d1", a)
         cmd.Parameters.AddWithValue("@d2", b)
         cmd.Parameters.AddWithValue("@d3", e)

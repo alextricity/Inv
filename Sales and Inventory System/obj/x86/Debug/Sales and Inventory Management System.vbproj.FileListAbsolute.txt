@@ -167,3 +167,4 @@ C:\Users\aroberts\AppData\Roaming\Inv\Sales and Inventory System\obj\x86\Debug\S
 C:\Users\aroberts\AppData\Roaming\Inv\Sales and Inventory System\obj\x86\Debug\Sales and Inventory Management System.vbproj.CoreCompileInputs.cache
 C:\Users\aroberts\AppData\Roaming\Inv\Sales and Inventory System\obj\x86\Debug\Sales and Inventory Management System.vbproj.CopyComplete
 C:\Users\aroberts\AppData\Roaming\Inv\Sales and Inventory System\obj\x86\Debug\Sales and Inventory System.exe
+C:\Users\aroberts\AppData\Roaming\Inv\Sales and Inventory System\bin\Debug\Resources\SQLSettings.dat

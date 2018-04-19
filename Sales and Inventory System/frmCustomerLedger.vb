@@ -1,4 +1,4 @@
-﻿Imports System.Data.SqlClient
+﻿Imports System.Data.Odbc
 
 
 Public Class frmCustomerLedger
@@ -6,10 +6,10 @@ Public Class frmCustomerLedger
     Dim a, b, c As String
     Sub fillCustomer()
         Try
-            con = New SqlConnection(cs)
+            con = New OdbcConnection(cs)
             con.Open()
-            adp = New SqlDataAdapter()
-            adp.SelectCommand = New SqlCommand("SELECT RTRIM(Name) FROM Customer where CustomerType='Regular'", con)
+            adp = New OdbcDataAdapter()
+            adp.SelectCommand = New OdbcCommand("SELECT RTRIM(Name) FROM Customer where CustomerType='Regular'", con)
             ds = New DataSet("ds")
             adp.Fill(ds)
             dtable = ds.Tables(0)
@@ -49,8 +49,8 @@ Public Class frmCustomerLedger
                 cmbCustomerName.Focus()
                 Exit Sub
             End If
-           Dim ct As String = "select PartyID from LedgerBook where PartyID=@d1 and Date >=@d2 and Date < @d3"
-            cmd = New SqlCommand(ct)
+            Dim ct As String = "select PartyID from LedgerBook where PartyID=@d1 and Date >=@d2 and Date < @d3"
+            cmd = New OdbcCommand(ct)
             cmd.Parameters.AddWithValue("@d1", txtCustomerID.Text)
             cmd.Parameters.Add("@d2", SqlDbType.DateTime, 30, "Date").Value = dtpDateFrom.Value.Date
             cmd.Parameters.Add("@d3", SqlDbType.DateTime, 30, "Date").Value = dtpDateTo.Value.Date.AddDays(1)
@@ -66,13 +66,13 @@ Public Class frmCustomerLedger
             End If
             Cursor = Cursors.WaitCursor
             Timer1.Enabled = True
-            con = New SqlConnection(cs)
+            con = New OdbcConnection(cs)
             con.Open()
-            cmd = New SqlCommand("Select Date, Name, LedgerNo, Label, Credit, Debit from LedgerBook where Date >=@d1 and Date < @d2 and PartyID=@d3 order by Date,LedgerNo", con)
+            cmd = New OdbcCommand("Select Date, Name, LedgerNo, Label, Credit, Debit from LedgerBook where Date >=@d1 and Date < @d2 and PartyID=@d3 order by Date,LedgerNo", con)
             cmd.Parameters.Add("@d1", SqlDbType.DateTime, 30, "Date").Value = dtpDateFrom.Value.Date
             cmd.Parameters.Add("@d2", SqlDbType.DateTime, 30, "Date").Value = dtpDateTo.Value.Date.AddDays(1)
             cmd.Parameters.AddWithValue("@d3", txtCustomerID.Text)
-            adp = New SqlDataAdapter(cmd)
+            adp = New OdbcDataAdapter(cmd)
             dtable = New DataTable()
             adp.Fill(dtable)
             con.Close()
@@ -95,7 +95,7 @@ Public Class frmCustomerLedger
             b = ""
             c = ""
             txtCustomerID.Text = ""
-            con = New SqlConnection(cs)
+            con = New OdbcConnection(cs)
             con.Open()
             cmd = con.CreateCommand()
             cmd.CommandText = "SELECT RTRIM(CustomerID),RTRIM(Address),RTRIM(City),RTRIM(ContactNo) FROM Customer WHERE Name=@d1"

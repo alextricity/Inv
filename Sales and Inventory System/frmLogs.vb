@@ -1,4 +1,4 @@
-﻿Imports System.Data.SqlClient
+﻿Imports System.Data.Odbc
 
 
 Public Class frmLogs
@@ -9,10 +9,10 @@ Public Class frmLogs
     End Sub
     Sub fillCombo()
         Try
-            Dim CN As New SqlConnection(cs)
+            Dim CN As New OdbcConnection(cs)
             CN.Open()
-            adp = New SqlDataAdapter()
-            adp.SelectCommand = New SqlCommand("SELECT distinct RTRIM(UserID) FROM Registration", CN)
+            adp = New OdbcDataAdapter()
+            adp.SelectCommand = New OdbcCommand("SELECT distinct RTRIM(UserID) FROM Registration", CN)
             ds = New DataSet("ds")
             adp.Fill(ds)
             Dim dtable As DataTable = ds.Tables(0)
@@ -28,9 +28,9 @@ Public Class frmLogs
 
     Private Sub cmbUserID_SelectedIndexChanged(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles cmbUserID.SelectedIndexChanged
         Try
-            con = New SqlConnection(cs)
+            con = New OdbcConnection(cs)
             con.Open()
-            cmd = New SqlCommand("SELECT RTRIM(UserID),Date,RTRIM(Operation) from Logs where UserID=@d1 order by date", con)
+            cmd = New OdbcCommand("SELECT RTRIM(UserID),Date,RTRIM(Operation) from Logs where UserID=@d1 order by date", con)
             cmd.Parameters.AddWithValue("@d1", cmbUserID.Text)
             While (rdr.Read() = True)
                 dgw.Rows.Add(rdr(0), rdr(1), rdr(2))
@@ -40,7 +40,7 @@ Public Class frmLogs
             MessageBox.Show(ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error)
         End Try
     End Sub
-   
+
     Private Sub frmLogs_Load(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles MyBase.Load
         fillCombo()
 
@@ -49,7 +49,7 @@ Public Class frmLogs
         cmbUserID.SelectedIndex = -1
         dtpDateFrom.Text = Today
         dtpDateTo.Text = Today
-     
+
     End Sub
     Private Sub btnReset_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles btnReset.Click
         Reset()
@@ -57,9 +57,9 @@ Public Class frmLogs
 
     Private Sub btnGetData_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles btnGetData.Click
         Try
-            con = New SqlConnection(cs)
+            con = New OdbcConnection(cs)
             con.Open()
-            cmd = New SqlCommand("SELECT RTRIM(UserID),Date,RTRIM(Operation) from logs where Date >=@d1 and Date < @d2 order by Date", con)
+            cmd = New OdbcCommand("SELECT RTRIM(UserID),Date,RTRIM(Operation) from logs where Date >=@d1 and Date < @d2 order by Date", con)
             cmd.Parameters.Add("@date1", SqlDbType.DateTime, 30, "Date").Value = dtpDateFrom.Value.Date
             cmd.Parameters.Add("@date2", SqlDbType.DateTime, 30, "Date").Value = dtpDateTo.Value.Date.AddDays(1)
             rdr = cmd.ExecuteReader(CommandBehavior.CloseConnection)
@@ -96,11 +96,11 @@ Public Class frmLogs
             Dim RowsAffected As Integer = 0
             con.Open()
             Dim ct As String = "delete from logs"
-            cmd = New SqlCommand(ct)
+            cmd = New OdbcCommand(ct)
             cmd.Connection = con
             RowsAffected = cmd.ExecuteNonQuery()
             If RowsAffected > 0 Then
-                con = New SqlConnection(cs)
+                con = New OdbcConnection(cs)
                 con.Open()
                 Dim st As String = "deleted the all logs till date '" & Now.ToString("dd/MM/yyyy hh:mm:ss tt") & "'"
                 LogFunc(lblUser.Text, st)

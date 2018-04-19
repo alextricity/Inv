@@ -1,4 +1,5 @@
-﻿Imports System.Data.SqlClient
+﻿Imports System.Data.Odbc
+
 Imports System.IO
 
 Public Class frmCompany
@@ -44,10 +45,10 @@ Public Class frmCompany
             Return
         End If
 
-        con = New SqlConnection(cs)
+        con = New OdbcConnection(cs)
         con.Open()
         Dim ct As String = "select count(*) from company Having count(*) >= 1"
-        cmd = New SqlCommand(ct)
+        cmd = New OdbcCommand(ct)
         cmd.Connection = con
         rdr = cmd.ExecuteReader()
         If rdr.Read Then
@@ -57,7 +58,7 @@ Public Class frmCompany
             End If
             Exit Sub
         End If
-        con = New SqlConnection(cs)
+        con = New OdbcConnection(cs)
         con.Open()
     End Sub
 
@@ -86,10 +87,10 @@ Public Class frmCompany
         End If
         Try
 
-            con = New SqlConnection(cs)
+            con = New OdbcConnection(cs)
             con.Open()
             Dim cb As String = "Update company set companyName=@d1, Address=@d2, ContactNo=@d3, EmailID=@d4, TIN=@d5, STNo=@d6, CIN=@d7, Logo=@d8 where ID=" & txtID.Text & ""
-            cmd = New SqlCommand(cb)
+            cmd = New OdbcCommand(cb)
             cmd.Connection = con
             cmd.Parameters.AddWithValue("@d1", txtCompanyName.Text)
             cmd.Parameters.AddWithValue("@d2", txtAddress.Text)
@@ -102,7 +103,7 @@ Public Class frmCompany
             Dim bmpImage As New Bitmap(PictureBox1.Image)
             bmpImage.Save(ms, System.Drawing.Imaging.ImageFormat.Jpeg)
             Dim data As Byte() = ms.GetBuffer()
-            Dim p As New SqlParameter("@d8", SqlDbType.Image)
+            Dim p As New OdbcParameter("@d8", SqlDbType.Image)
             p.Value = data
             cmd.Parameters.Add(p)
             cmd.ExecuteNonQuery()
@@ -118,9 +119,9 @@ Public Class frmCompany
     End Sub
     Public Sub Getdata()
         Try
-            con = New SqlConnection(cs)
+            con = New OdbcConnection(cs)
             con.Open()
-            cmd = New SqlCommand("SELECT RTRIM(ID), RTRIM(companyName), RTRIM(Address), RTRIM(ContactNo), RTRIM(EmailID), RTRIM(TIN), RTRIM(STNo), RTRIM(CIN), Logo from company", con)
+            cmd = New OdbcCommand("SELECT RTRIM(ID), RTRIM(companyName), RTRIM(Address), RTRIM(ContactNo), RTRIM(EmailID), RTRIM(TIN), RTRIM(STNo), RTRIM(CIN), Logo from company", con)
             rdr = cmd.ExecuteReader(CommandBehavior.CloseConnection)
             dgw.Rows.Clear()
             While (rdr.Read() = True)
@@ -206,10 +207,10 @@ Public Class frmCompany
         Try
 
             Dim RowsAffected As Integer = 0
-            con = New SqlConnection(cs)
+            con = New OdbcConnection(cs)
             con.Open()
             Dim cq As String = "delete from company where ID=@d1"
-            cmd = New SqlCommand(cq)
+            cmd = New OdbcCommand(cq)
             cmd.Connection = con
             cmd.Parameters.AddWithValue("@d1", txtID.Text)
             RowsAffected = cmd.ExecuteNonQuery()

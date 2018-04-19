@@ -1,4 +1,4 @@
-﻿Imports System.Data.SqlClient
+﻿Imports System.Data.Odbc
 
 
 Public Class frmVoucherReport
@@ -6,10 +6,10 @@ Public Class frmVoucherReport
     Dim a As Decimal
     Sub fillVoucherNo()
         Try
-            Dim CN As New SqlConnection(cs)
+            Dim CN As New OdbcConnection(cs)
             CN.Open()
-            adp = New SqlDataAdapter()
-            adp.SelectCommand = New SqlCommand("SELECT distinct RTRIM(VoucherNo) FROM Voucher", CN)
+            adp = New OdbcDataAdapter()
+            adp.SelectCommand = New OdbcCommand("SELECT distinct RTRIM(VoucherNo) FROM Voucher", CN)
             ds = New DataSet("ds")
             adp.Fill(ds)
             dtable = ds.Tables(0)
@@ -52,11 +52,11 @@ Public Class frmVoucherReport
             Cursor = Cursors.WaitCursor
             Timer1.Enabled = True
             'Dim rpt As New rptVoucher 'The report you created.
-            Dim myConnection As SqlConnection
-            Dim MyCommand, MyCommand1 As New SqlCommand()
-            Dim myDA, myDA1 As New SqlDataAdapter()
+            Dim myConnection As OdbcConnection
+            Dim MyCommand, MyCommand1 As New OdbcCommand()
+            Dim myDA, myDA1 As New OdbcDataAdapter()
             Dim myDS As New DataSet 'The DataSet you created.
-            myConnection = New SqlConnection(cs)
+            myConnection = New OdbcConnection(cs)
             MyCommand.Connection = myConnection
             MyCommand1.Connection = myConnection
             MyCommand.CommandText = "SELECT Voucher.ID, Voucher.VoucherNo, Voucher.Date, Voucher.Name, Voucher.Details, Voucher.GrandTotal, Voucher_OtherDetails.VD_ID, Voucher_OtherDetails.VoucherID,Voucher_OtherDetails.Particulars, Voucher_OtherDetails.Amount, Voucher_OtherDetails.Note FROM Voucher INNER JOIN Voucher_OtherDetails ON Voucher.ID = Voucher_OtherDetails.VoucherID  where VoucherNo='" & cmbVoucherNo.Text & "'"
@@ -90,11 +90,11 @@ Public Class frmVoucherReport
             Cursor = Cursors.WaitCursor
             Timer1.Enabled = True
             ' Dim rpt As New rptExpenses 'The report you created.
-            Dim myConnection As SqlConnection
-            Dim MyCommand As New SqlCommand()
-            Dim myDA As New SqlDataAdapter()
+            Dim myConnection As OdbcConnection
+            Dim MyCommand As New OdbcCommand()
+            Dim myDA As New OdbcDataAdapter()
             Dim myDS As New DataSet 'The DataSet you created.
-            myConnection = New SqlConnection(cs)
+            myConnection = New OdbcConnection(cs)
             MyCommand.Connection = myConnection
             MyCommand.CommandText = "SELECT Voucher.ID, Voucher.VoucherNo, Voucher.Date, Voucher.Name, Voucher.Details, Voucher.GrandTotal, Voucher_OtherDetails.VD_ID, Voucher_OtherDetails.VoucherID,Voucher_OtherDetails.Particulars, Voucher_OtherDetails.Amount, Voucher_OtherDetails.Note FROM Voucher INNER JOIN Voucher_OtherDetails ON Voucher.ID = Voucher_OtherDetails.VoucherID  where date between @d1 and @d2 order by date"
             MyCommand.Parameters.Add("@d1", SqlDbType.DateTime, 30, "Date").Value = dtpDateFrom.Value.Date
@@ -103,10 +103,10 @@ Public Class frmVoucherReport
             myDA.SelectCommand = MyCommand
             myDA.Fill(myDS, "Voucher")
             myDA.Fill(myDS, "Voucher_OtherDetails")
-            con = New SqlConnection(cs)
+            con = New OdbcConnection(cs)
             con.Open()
             Dim ct As String = "select ISNULL(sum(GrandTotal),0) from Voucher where Date between @d1 and @d2"
-            cmd = New SqlCommand(ct)
+            cmd = New OdbcCommand(ct)
             cmd.Parameters.Add("@d1", SqlDbType.DateTime, 30, "Date").Value = dtpDateFrom.Value.Date
             cmd.Parameters.Add("@d2", SqlDbType.DateTime, 30, "Date").Value = dtpDateTo.Value.Date
             cmd.Connection = con

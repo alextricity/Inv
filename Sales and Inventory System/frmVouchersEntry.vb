@@ -1,4 +1,4 @@
-﻿Imports System.Data.SqlClient
+﻿Imports System.Data.Odbc
 
 Public Class frmVouchersEntry
 
@@ -84,12 +84,12 @@ Public Class frmVouchersEntry
         Reset()
     End Sub
     Private Function GenerateID() As String
-        con = New SqlConnection(cs)
+        con = New OdbcConnection(cs)
         Dim value As String = "0000"
         Try
             ' Fetch the latest ID from the database
             con.Open()
-            cmd = New SqlCommand("SELECT TOP 1 ID FROM Voucher ORDER BY ID DESC", con)
+            cmd = New OdbcCommand("SELECT TOP 1 ID FROM Voucher ORDER BY ID DESC", con)
             rdr = cmd.ExecuteReader(CommandBehavior.CloseConnection)
             If rdr.HasRows Then
                 rdr.Read()
@@ -130,11 +130,11 @@ Public Class frmVouchersEntry
             Cursor = Cursors.WaitCursor
             Timer1.Enabled = True
             'Dim rpt As New rptVoucher 'The report you created.
-            Dim myConnection As SqlConnection
-            Dim MyCommand, MyCommand1 As New SqlCommand()
-            Dim myDA, myDA1 As New SqlDataAdapter()
+            Dim myConnection As OdbcConnection
+            Dim MyCommand, MyCommand1 As New OdbcCommand()
+            Dim myDA, myDA1 As New OdbcDataAdapter()
             Dim myDS As New DataSet 'The DataSet you created.
-            myConnection = New SqlConnection(cs)
+            myConnection = New OdbcConnection(cs)
             MyCommand.Connection = myConnection
             MyCommand1.Connection = myConnection
             MyCommand.CommandText = "SELECT Voucher.ID, Voucher.VoucherNo, Voucher.Date, Voucher.Name, Voucher.Details, Voucher.GrandTotal, Voucher_OtherDetails.VD_ID, Voucher_OtherDetails.VoucherID,Voucher_OtherDetails.Particulars, Voucher_OtherDetails.Amount, Voucher_OtherDetails.Note FROM Voucher INNER JOIN Voucher_OtherDetails ON Voucher.ID = Voucher_OtherDetails.VoucherID  where VoucherNo='" & txtVoucherNo.Text & "'"
@@ -142,7 +142,7 @@ Public Class frmVouchersEntry
             myDA.Fill(myDS, "Voucher")
             myDA.Fill(myDS, "Voucher_OtherDetails")
             myDA1.Fill(myDS, "Company")
-       
+
             frmReport.ShowDialog()
         Catch ex As Exception
             MessageBox.Show(ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error)
@@ -159,15 +159,15 @@ Public Class frmVouchersEntry
                 MessageBox.Show("sorry no data added to grid", "", MessageBoxButtons.OK, MessageBoxIcon.Warning)
                 Exit Sub
             End If
-            con = New SqlConnection(cs)
+            con = New OdbcConnection(cs)
             con.Open()
             Dim cb As String = "insert into Voucher(Id, VoucherNo, Date,Name,Details,GrandTotal) Values (@d1,@d2,@d3,@d4,@d5,@d7)"
-            cmd = New SqlCommand(cb)
+            cmd = New OdbcCommand(cb)
             cmd.Parameters.AddWithValue("@d1", Val(txtVoucherID.Text))
             cmd.Parameters.AddWithValue("@d2", txtVoucherNo.Text)
             cmd.Parameters.AddWithValue("@d3", dtpDate.Value.Date)
             con.Close()
-            con = New SqlConnection(cs)
+            con = New OdbcConnection(cs)
             con.Open()
             Dim cb1 As String = "insert into Voucher_OtherDetails(VoucherID,Particulars,Amount,Note) VALUES (" & txtVoucherID.Text & ",@d1,@d2,@d3)"
             Dim st As String = "added the new voucher having voucher no.'" & txtVoucherNo.Text & "'"
@@ -183,10 +183,10 @@ Public Class frmVouchersEntry
     Public Sub DeleteRecord()
         Try
             Dim RowsAffected As Integer = 0
-            con = New SqlConnection(cs)
+            con = New OdbcConnection(cs)
             con.Open()
             Dim ct As String = "delete from Voucher where ID=" & txtVoucherID.Text & ""
-            cmd = New SqlCommand(ct)
+            cmd = New OdbcCommand(ct)
             cmd.Connection = con
             RowsAffected = cmd.ExecuteNonQuery()
             If con.State = ConnectionState.Open Then
@@ -232,14 +232,14 @@ Public Class frmVouchersEntry
             End If
             con.Open()
             Dim ct As String = "delete from Voucher_OtherDetails where VoucherID=" & txtVoucherID.Text & ""
-            cmd = New SqlCommand(ct)
+            cmd = New OdbcCommand(ct)
             cmd.Connection = con
             cmd.ExecuteNonQuery()
             con.Close()
-            con = New SqlConnection(cs)
+            con = New OdbcConnection(cs)
             con.Open()
             Dim cb1 As String = "insert into Voucher_OtherDetails(VoucherID,Particulars,Amount,Note) VALUES (" & txtVoucherID.Text & ",@d1,@d2,@d3)"
-            cmd = New SqlCommand(cb1)
+            cmd = New OdbcCommand(cb1)
             cmd.Connection = con
             ' Prepare command for repeated execution
             cmd.Prepare()

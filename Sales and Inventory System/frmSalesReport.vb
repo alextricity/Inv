@@ -1,4 +1,4 @@
-﻿Imports System.Data.SqlClient
+﻿Imports System.Data.Odbc
 
 
 Public Class frmSalesReport
@@ -25,10 +25,10 @@ Public Class frmSalesReport
 
     Private Sub btnGetData_Click(sender As System.Object, e As System.EventArgs) Handles btnGetData.Click
         Try
-            con = New SqlConnection(cs)
+            con = New OdbcConnection(cs)
             con.Open()
             Dim ctn As String = "select InvoiceNo from InvoiceInfo where InvoiceDate between @d1 and @d2"
-            cmd = New SqlCommand(ctn)
+            cmd = New OdbcCommand(ctn)
             cmd.Parameters.Add("@d1", SqlDbType.DateTime, 30, "Date").Value = dtpDateFrom.Value.Date
             cmd.Parameters.Add("@d2", SqlDbType.DateTime, 30, "Date").Value = dtpDateTo.Value.Date
             cmd.Connection = con
@@ -44,11 +44,11 @@ Public Class frmSalesReport
             Cursor = Cursors.WaitCursor
             Timer1.Enabled = True
             '  Dim rpt As New rptSales2 'The report you created.
-            Dim myConnection As SqlConnection
-            Dim MyCommand, MyCommand1 As New SqlCommand()
-            Dim myDA, myDA1 As New SqlDataAdapter()
+            Dim myConnection As OdbcConnection
+            Dim MyCommand, MyCommand1 As New OdbcCommand()
+            Dim myDA, myDA1 As New OdbcDataAdapter()
             Dim myDS, myDS1 As New DataSet 'The DataSet you created.
-            myConnection = New SqlConnection(cs)
+            myConnection = New OdbcConnection(cs)
             MyCommand.Connection = myConnection
             MyCommand1.Connection = myConnection
             MyCommand.CommandText = "SELECT * FROM InvoiceInfo INNER JOIN Customer ON InvoiceInfo.CustomerID = Customer.ID where InvoiceDate between @d1 and @d2 order by InvoiceDate"
@@ -62,18 +62,18 @@ Public Class frmSalesReport
             myDA.Fill(myDS, "InvoiceInfo")
             myDA.Fill(myDS, "Customer")
             myDA1.Fill(myDS, "Company")
-            con = New SqlConnection(cs)
+            con = New OdbcConnection(cs)
             con.Open()
-            cmd = New SqlCommand("SELECT CONVERT(varchar(10),YEAR(InvoiceDate)) AS Year, SUM(GrandTotal) AS GrandTotal FROM InvoiceInfo where InvoiceDate between @d3 and @d4 GROUP BY YEAR(InvoiceDate) ORDER BY Year", con)
+            cmd = New OdbcCommand("SELECT CONVERT(varchar(10),YEAR(InvoiceDate)) AS Year, SUM(GrandTotal) AS GrandTotal FROM InvoiceInfo where InvoiceDate between @d3 and @d4 GROUP BY YEAR(InvoiceDate) ORDER BY Year", con)
             cmd.Parameters.Add("@d3", SqlDbType.DateTime, 30, "Date").Value = dtpDateFrom.Value.Date
             cmd.Parameters.Add("@d4", SqlDbType.DateTime, 30, "Date").Value = dtpDateTo.Value.Date
-            adp = New SqlDataAdapter(cmd)
+            adp = New OdbcDataAdapter(cmd)
             dtable = New DataTable()
             adp.Fill(dtable)
             con.Close()
             myDS1.Tables.Add(dtable)
             myDS1.WriteXmlSchema("TotalSales.xml")
-          
+
             frmReport.ShowDialog()
         Catch ex As Exception
             MessageBox.Show(ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error)
@@ -82,10 +82,10 @@ Public Class frmSalesReport
 
     Private Sub Button1_Click(sender As System.Object, e As System.EventArgs) Handles Button1.Click
         Try
-            con = New SqlConnection(cs)
+            con = New OdbcConnection(cs)
             con.Open()
             Dim ctn As String = "select InvoiceNo from InvoiceInfo where InvoiceDate between @d1 and @d2"
-            cmd = New SqlCommand(ctn)
+            cmd = New OdbcCommand(ctn)
             cmd.Parameters.Add("@d1", SqlDbType.DateTime, 30, "Date").Value = dtpDateFrom.Value.Date
             cmd.Parameters.Add("@d2", SqlDbType.DateTime, 30, "Date").Value = dtpDateTo.Value.Date
             cmd.Connection = con
@@ -101,11 +101,11 @@ Public Class frmSalesReport
             Cursor = Cursors.WaitCursor
             Timer1.Enabled = True
             '  Dim rpt As New rptSales1 'The report you created.
-            Dim myConnection As SqlConnection
-            Dim MyCommand, MyCommand1 As New SqlCommand()
-            Dim myDA, myDA1 As New SqlDataAdapter()
+            Dim myConnection As OdbcConnection
+            Dim MyCommand, MyCommand1 As New OdbcCommand()
+            Dim myDA, myDA1 As New OdbcDataAdapter()
             Dim myDS As New DataSet 'The DataSet you created.
-            myConnection = New SqlConnection(cs)
+            myConnection = New OdbcConnection(cs)
             MyCommand.Connection = myConnection
             MyCommand1.Connection = myConnection
             MyCommand.CommandText = "SELECT Customer.ID, Customer.Name, Customer.Gender, Customer.Address, Customer.City, Customer.State, Customer.ZipCode, Customer.ContactNo, Customer.EmailID, Customer.Remarks,Customer.Photo, InvoiceInfo.Inv_ID, InvoiceInfo.InvoiceNo, InvoiceInfo.InvoiceDate, InvoiceInfo.CustomerID , InvoiceInfo.GrandTotal, InvoiceInfo.TotalPaid, InvoiceInfo.Balance, Invoice_Product.IPo_ID, Invoice_Product.InvoiceID, Invoice_Product.ProductID, Invoice_Product.CostPrice, Invoice_Product.SellingPrice, Invoice_Product.Margin,Invoice_Product.Qty, Invoice_Product.Amount, Invoice_Product.DiscountPer, Invoice_Product.Discount, Invoice_Product.VATPer, Invoice_Product.VAT, Invoice_Product.TotalAmount, Product.PID,Product.ProductCode, Product.ProductName FROM Customer INNER JOIN InvoiceInfo ON Customer.ID = InvoiceInfo.CustomerID INNER JOIN Invoice_Product ON InvoiceInfo.Inv_ID = Invoice_Product.InvoiceID INNER JOIN Product ON Invoice_Product.ProductID = Product.PID where InvoiceDate between @d1 and @d2 order by InvoiceDate"
@@ -121,10 +121,10 @@ Public Class frmSalesReport
             myDA.Fill(myDS, "Customer")
             myDA.Fill(myDS, "Product")
             myDA1.Fill(myDS, "Company")
-            con = New SqlConnection(cs)
+            con = New OdbcConnection(cs)
             con.Open()
             Dim ct As String = "select ISNULL(sum(GrandTotal),0),ISNULL(sum(TotalPaid),0),ISNULL(sum(Balance),0) from InvoiceInfo where InvoiceDate between @d1 and @d2"
-            cmd = New SqlCommand(ct)
+            cmd = New OdbcCommand(ct)
             cmd.Parameters.Add("@d1", SqlDbType.DateTime, 30, "Date").Value = dtpDateFrom.Value.Date
             cmd.Parameters.Add("@d2", SqlDbType.DateTime, 30, "Date").Value = dtpDateTo.Value.Date
             cmd.Connection = con
@@ -140,10 +140,10 @@ Public Class frmSalesReport
                 c = 0
             End If
             con.Close()
-            con = New SqlConnection(cs)
+            con = New OdbcConnection(cs)
             con.Open()
             Dim ct1 As String = "select ISNULL(sum(Margin),0) from InvoiceInfo,Invoice_Product where InvoiceInfo.Inv_ID=Invoice_Product.InvoiceID and InvoiceDate between @d1 and @d2"
-            cmd = New SqlCommand(ct1)
+            cmd = New OdbcCommand(ct1)
             cmd.Parameters.Add("@d1", SqlDbType.DateTime, 30, "Date").Value = dtpDateFrom.Value.Date
             cmd.Parameters.Add("@d2", SqlDbType.DateTime, 30, "Date").Value = dtpDateTo.Value.Date
             cmd.Connection = con
