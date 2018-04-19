@@ -1,0 +1,328 @@
+D:\Inventory Software\Sales and Inventory System\bin\Debug\Sales and Inventory System.exe.config
+D:\Inventory Software\Sales and Inventory System\bin\Debug\Sales and Inventory System.exe
+D:\Inventory Software\Sales and Inventory System\bin\Debug\Sales and Inventory System.pdb
+D:\Inventory Software\Sales and Inventory System\bin\Debug\Sales and Inventory System.xml
+D:\Inventory Software\Sales and Inventory System\obj\x86\Debug\Sales and Inventory System.vbprojResolveAssemblyReference.cache
+D:\Inventory Software\Sales and Inventory System\obj\x86\Debug\Sales_and_Inventory_System.frmTrialBalance.resources
+D:\Inventory Software\Sales and Inventory System\obj\x86\Debug\Sales_and_Inventory_System.frmPaymentRecord.resources
+D:\Inventory Software\Sales and Inventory System\obj\x86\Debug\Sales_and_Inventory_System.frmPayment.resources
+D:\Inventory Software\Sales and Inventory System\obj\x86\Debug\Sales_and_Inventory_System.frmGeneralDayBook.resources
+D:\Inventory Software\Sales and Inventory System\obj\x86\Debug\Sales_and_Inventory_System.frmGeneralLedger.resources
+D:\Inventory Software\Sales and Inventory System\obj\x86\Debug\Sales_and_Inventory_System.frmPurchaseDaybook.resources
+D:\Inventory Software\Sales and Inventory System\obj\x86\Debug\Sales_and_Inventory_System.frmSqlServerSetting.resources
+D:\Inventory Software\Sales and Inventory System\obj\x86\Debug\Sales_and_Inventory_System.frmOverallReport.resources
+D:\Inventory Software\Sales and Inventory System\obj\x86\Debug\Sales_and_Inventory_System.frmCreditorsAndDebtorsReport.resources
+D:\Inventory Software\Sales and Inventory System\obj\x86\Debug\Sales_and_Inventory_System.frmProfitAndLossReport.resources
+D:\Inventory Software\Sales and Inventory System\obj\x86\Debug\Sales_and_Inventory_System.frmPurchaseReport.resources
+D:\Inventory Software\Sales and Inventory System\obj\x86\Debug\Sales_and_Inventory_System.frmStockInAndOutReport.resources
+D:\Inventory Software\Sales and Inventory System\obj\x86\Debug\Sales_and_Inventory_System.frmVoucher.resources
+D:\Inventory Software\Sales and Inventory System\obj\x86\Debug\Sales_and_Inventory_System.frmVoucherRecord.resources
+D:\Inventory Software\Sales and Inventory System\obj\x86\Debug\Sales_and_Inventory_System.frmVoucherReport.resources
+D:\Inventory Software\Sales and Inventory System\obj\x86\Debug\Sales_and_Inventory_System.frmRegistration1.resources
+D:\Inventory Software\Sales and Inventory System\obj\x86\Debug\Sales_and_Inventory_System.frmSMSSetting.resources
+D:\Inventory Software\Sales and Inventory System\obj\x86\Debug\Sales_and_Inventory_System.frmServiceDoneReport.resources
+D:\Inventory Software\Sales and Inventory System\obj\x86\Debug\Sales_and_Inventory_System.frmCustomerRecord2.resources
+D:\Inventory Software\Sales and Inventory System\obj\x86\Debug\Sales_and_Inventory_System.frmBillingRecord1.resources
+D:\Inventory Software\Sales and Inventory System\obj\x86\Debug\Sales_and_Inventory_System.frmServicesRecord1.resources
+D:\Inventory Software\Sales and Inventory System\obj\x86\Debug\Sales_and_Inventory_System.frmBilling1.resources
+D:\Inventory Software\Sales and Inventory System\obj\x86\Debug\Sales_and_Inventory_System.frmQuotationRecord1.resources
+D:\Inventory Software\Sales and Inventory System\obj\x86\Debug\Sales_and_Inventory_System.frmQuotationRecord.resources
+D:\Inventory Software\Sales and Inventory System\obj\x86\Debug\Sales_and_Inventory_System.frmSplash.resources
+D:\Inventory Software\Sales and Inventory System\obj\x86\Debug\Sales_and_Inventory_System.frmQuotation.resources
+D:\Inventory Software\Sales and Inventory System\obj\x86\Debug\Sales_and_Inventory_System.frmServicesRecord.resources
+D:\Inventory Software\Sales and Inventory System\obj\x86\Debug\Sales_and_Inventory_System.frmServices.resources
+D:\Inventory Software\Sales and Inventory System\obj\x86\Debug\Sales_and_Inventory_System.frmLogin.resources
+D:\Inventory Software\Sales and Inventory System\obj\x86\Debug\Sales_and_Inventory_System.frmLogs.resources
+D:\Inventory Software\Sales and Inventory System\obj\x86\Debug\Sales_and_Inventory_System.frmSupplierRecord.resources
+D:\Inventory Software\Sales and Inventory System\obj\x86\Debug\Sales_and_Inventory_System.frmCustomerRecord1.resources
+D:\Inventory Software\Sales and Inventory System\obj\x86\Debug\Sales_and_Inventory_System.frmCustomerRecord.resources
+D:\Inventory Software\Sales and Inventory System\obj\x86\Debug\Sales_and_Inventory_System.frmCustomer.resources
+D:\Inventory Software\Sales and Inventory System\obj\x86\Debug\Sales_and_Inventory_System.frmCompany.resources
+D:\Inventory Software\Sales and Inventory System\obj\x86\Debug\Sales_and_Inventory_System.frmContacts.resources
+D:\Inventory Software\Sales and Inventory System\obj\x86\Debug\Sales_and_Inventory_System.frmBillingRecord.resources
+D:\Inventory Software\Sales and Inventory System\obj\x86\Debug\Sales_and_Inventory_System.frmBilling.resources
+D:\Inventory Software\Sales and Inventory System\obj\x86\Debug\Sales_and_Inventory_System.frmSalesReport.resources
+D:\Inventory Software\Sales and Inventory System\obj\x86\Debug\Sales_and_Inventory_System.frmReport.resources
+D:\Inventory Software\Sales and Inventory System\obj\x86\Debug\Sales_and_Inventory_System.frmCurrentStock.resources
+D:\Inventory Software\Sales and Inventory System\obj\x86\Debug\Sales_and_Inventory_System.frmPurchaseRecord.resources
+D:\Inventory Software\Sales and Inventory System\obj\x86\Debug\Sales_and_Inventory_System.frmProductRecord.resources
+D:\Inventory Software\Sales and Inventory System\obj\x86\Debug\Sales_and_Inventory_System.frmPurchase.resources
+D:\Inventory Software\Sales and Inventory System\obj\x86\Debug\Sales_and_Inventory_System.frmProduct.resources
+D:\Inventory Software\Sales and Inventory System\obj\x86\Debug\Sales_and_Inventory_System.frmCamera.resources
+D:\Inventory Software\Sales and Inventory System\obj\x86\Debug\Sales_and_Inventory_System.frmAbout.resources
+D:\Inventory Software\Sales and Inventory System\obj\x86\Debug\Sales_and_Inventory_System.frmActivation.resources
+D:\Inventory Software\Sales and Inventory System\obj\x86\Debug\Sales_and_Inventory_System.frmSubCategory.resources
+D:\Inventory Software\Sales and Inventory System\obj\x86\Debug\Sales_and_Inventory_System.frmChangePassword.resources
+D:\Inventory Software\Sales and Inventory System\obj\x86\Debug\Sales_and_Inventory_System.frmCategory.resources
+D:\Inventory Software\Sales and Inventory System\obj\x86\Debug\Sales_and_Inventory_System.frmMainMenu.resources
+D:\Inventory Software\Sales and Inventory System\obj\x86\Debug\Sales_and_Inventory_System.frmRegistration.resources
+D:\Inventory Software\Sales and Inventory System\obj\x86\Debug\Sales_and_Inventory_System.frmSupplier.resources
+D:\Inventory Software\Sales and Inventory System\obj\x86\Debug\Sales_and_Inventory_System.frmSystemInfo.resources
+D:\Inventory Software\Sales and Inventory System\obj\x86\Debug\Sales_and_Inventory_System.Resources.resources
+D:\Inventory Software\Sales and Inventory System\obj\x86\Debug\Sales and Inventory System.vbproj.GenerateResource.Cache
+D:\Inventory Software\Sales and Inventory System\obj\x86\Debug\Sales and Inventory System.exe
+D:\Inventory Software\Sales and Inventory System\obj\x86\Debug\Sales and Inventory System.xml
+D:\Inventory Software\Sales and Inventory System\obj\x86\Debug\Sales and Inventory System.pdb
+D:\Inventory Software\Sales and Inventory System\obj\x86\Debug\Sales_and_Inventory_System.frmCustomerLedger.resources
+D:\Inventory Software\Sales and Inventory System\obj\x86\Debug\Sales_and_Inventory_System.frmSupplierLedger.resources
+D:\Inventory Software\Sales and Inventory System\bin\Debug\CrystalDecisions.CrystalReports.Engine.dll
+D:\Inventory Software\Sales and Inventory System\bin\Debug\CrystalDecisions.ReportSource.dll
+D:\Inventory Software\Sales and Inventory System\bin\Debug\CrystalDecisions.Shared.dll
+D:\Inventory Software\Sales and Inventory System\bin\Debug\CrystalDecisions.Windows.Forms.dll
+D:\Inventory Software\Sales and Inventory System\bin\Debug\FlashControlV71.dll
+D:\Inventory Software\Sales and Inventory System\bin\Debug\Microsoft.SqlServer.ConnectionInfo.dll
+D:\Inventory Software\Sales and Inventory System\bin\Debug\Microsoft.SqlServer.Management.Sdk.Sfc.dll
+D:\Inventory Software\Sales and Inventory System\bin\Debug\Microsoft.SqlServer.Smo.dll
+D:\Inventory Software\Sales and Inventory System\bin\Debug\CrystalDecisions.ReportAppServer.DataDefModel.dll
+D:\Inventory Software\Sales and Inventory System\bin\Debug\CrystalDecisions.ReportAppServer.ClientDoc.dll
+D:\Inventory Software\Sales and Inventory System\bin\Debug\CrystalDecisions.ReportAppServer.ReportDefModel.dll
+D:\Inventory Software\Sales and Inventory System\bin\Debug\CrystalDecisions.ReportAppServer.Controllers.dll
+D:\Inventory Software\Sales and Inventory System\bin\Debug\CrystalDecisions.ReportAppServer.CommLayer.dll
+D:\Inventory Software\Sales and Inventory System\bin\Debug\CrystalDecisions.ReportAppServer.DataSetConversion.dll
+D:\Inventory Software\Sales and Inventory System\bin\Debug\CrystalDecisions.ReportAppServer.Prompting.dll
+D:\Inventory Software\Sales and Inventory System\bin\Debug\CrystalDecisions.ReportAppServer.XmlSerialize.dll
+D:\Inventory Software\Sales and Inventory System\bin\Debug\CrystalDecisions.ReportAppServer.CubeDefModel.dll
+D:\Inventory Software\Sales and Inventory System\bin\Debug\CrystalDecisions.ReportAppServer.CommonObjectModel.dll
+D:\Inventory Software\Sales and Inventory System\bin\Debug\CrystalDecisions.ReportAppServer.ObjectFactory.dll
+D:\Inventory Software\Sales and Inventory System\bin\Debug\ShockwaveFlashObjects.dll
+D:\Inventory Software\Sales and Inventory System\bin\Debug\Microsoft.SqlServer.SqlEnum.dll
+D:\Inventory Software\Sales and Inventory System\bin\Debug\Microsoft.SqlServer.Dmf.dll
+D:\Inventory Software\Sales and Inventory System\bin\Debug\Microsoft.SqlServer.ServiceBrokerEnum.dll
+D:\Inventory Software\Sales and Inventory System\bin\Debug\CrystalDecisions.ReportAppServer.CommonControls.dll
+D:\Inventory Software\Sales and Inventory System\bin\Debug\stdole.dll
+E:\Inventory Software\Sales and Inventory System\bin\Debug\Sales and Inventory System.exe.config
+E:\Inventory Software\Sales and Inventory System\obj\x86\Debug\Sales and Inventory System.exe
+E:\Inventory Software\Sales and Inventory System\obj\x86\Debug\Sales and Inventory System.xml
+E:\Inventory Software\Sales and Inventory System\obj\x86\Debug\Sales and Inventory System.pdb
+E:\Inventory Software\Sales and Inventory System\bin\Debug\Sales and Inventory System.exe
+E:\Inventory Software\Sales and Inventory System\bin\Debug\Sales and Inventory System.pdb
+E:\Inventory Software\Sales and Inventory System\bin\Debug\Sales and Inventory System.xml
+E:\Inventory Software\Sales and Inventory System\obj\x86\Debug\Sales and Inventory System.vbprojResolveAssemblyReference.cache
+E:\Inventory Software\Sales and Inventory System\obj\x86\Debug\Sales_and_Inventory_System.frmCustomerLedger.resources
+E:\Inventory Software\Sales and Inventory System\obj\x86\Debug\Sales_and_Inventory_System.frmSupplierLedger.resources
+E:\Inventory Software\Sales and Inventory System\obj\x86\Debug\Sales_and_Inventory_System.frmTrialBalance.resources
+E:\Inventory Software\Sales and Inventory System\obj\x86\Debug\Sales_and_Inventory_System.frmPaymentRecord.resources
+E:\Inventory Software\Sales and Inventory System\obj\x86\Debug\Sales_and_Inventory_System.frmPayment.resources
+E:\Inventory Software\Sales and Inventory System\obj\x86\Debug\Sales_and_Inventory_System.frmGeneralDayBook.resources
+E:\Inventory Software\Sales and Inventory System\obj\x86\Debug\Sales_and_Inventory_System.frmGeneralLedger.resources
+E:\Inventory Software\Sales and Inventory System\obj\x86\Debug\Sales_and_Inventory_System.frmPurchaseDaybook.resources
+E:\Inventory Software\Sales and Inventory System\obj\x86\Debug\Sales_and_Inventory_System.frmSqlServerSetting.resources
+E:\Inventory Software\Sales and Inventory System\obj\x86\Debug\Sales_and_Inventory_System.frmOverallReport.resources
+E:\Inventory Software\Sales and Inventory System\obj\x86\Debug\Sales_and_Inventory_System.frmCreditorsAndDebtorsReport.resources
+E:\Inventory Software\Sales and Inventory System\obj\x86\Debug\Sales_and_Inventory_System.frmProfitAndLossReport.resources
+E:\Inventory Software\Sales and Inventory System\obj\x86\Debug\Sales_and_Inventory_System.frmPurchaseReport.resources
+E:\Inventory Software\Sales and Inventory System\obj\x86\Debug\Sales_and_Inventory_System.frmStockInAndOutReport.resources
+E:\Inventory Software\Sales and Inventory System\obj\x86\Debug\Sales_and_Inventory_System.frmVoucher.resources
+E:\Inventory Software\Sales and Inventory System\obj\x86\Debug\Sales_and_Inventory_System.frmVoucherRecord.resources
+E:\Inventory Software\Sales and Inventory System\obj\x86\Debug\Sales_and_Inventory_System.frmVoucherReport.resources
+E:\Inventory Software\Sales and Inventory System\obj\x86\Debug\Sales_and_Inventory_System.frmRegistration1.resources
+E:\Inventory Software\Sales and Inventory System\obj\x86\Debug\Sales_and_Inventory_System.frmSMSSetting.resources
+E:\Inventory Software\Sales and Inventory System\obj\x86\Debug\Sales_and_Inventory_System.frmServiceDoneReport.resources
+E:\Inventory Software\Sales and Inventory System\obj\x86\Debug\Sales_and_Inventory_System.frmCustomerRecord2.resources
+E:\Inventory Software\Sales and Inventory System\obj\x86\Debug\Sales_and_Inventory_System.frmBillingRecord1.resources
+E:\Inventory Software\Sales and Inventory System\obj\x86\Debug\Sales_and_Inventory_System.frmServicesRecord1.resources
+E:\Inventory Software\Sales and Inventory System\obj\x86\Debug\Sales_and_Inventory_System.frmBilling1.resources
+E:\Inventory Software\Sales and Inventory System\obj\x86\Debug\Sales_and_Inventory_System.frmQuotationRecord1.resources
+E:\Inventory Software\Sales and Inventory System\obj\x86\Debug\Sales_and_Inventory_System.frmQuotationRecord.resources
+E:\Inventory Software\Sales and Inventory System\obj\x86\Debug\Sales_and_Inventory_System.frmSplash.resources
+E:\Inventory Software\Sales and Inventory System\obj\x86\Debug\Sales_and_Inventory_System.frmQuotation.resources
+E:\Inventory Software\Sales and Inventory System\obj\x86\Debug\Sales_and_Inventory_System.frmServicesRecord.resources
+E:\Inventory Software\Sales and Inventory System\obj\x86\Debug\Sales_and_Inventory_System.frmServices.resources
+E:\Inventory Software\Sales and Inventory System\obj\x86\Debug\Sales_and_Inventory_System.frmLogin.resources
+E:\Inventory Software\Sales and Inventory System\obj\x86\Debug\Sales_and_Inventory_System.frmLogs.resources
+E:\Inventory Software\Sales and Inventory System\obj\x86\Debug\Sales_and_Inventory_System.frmSupplierRecord.resources
+E:\Inventory Software\Sales and Inventory System\obj\x86\Debug\Sales_and_Inventory_System.frmCustomerRecord1.resources
+E:\Inventory Software\Sales and Inventory System\obj\x86\Debug\Sales_and_Inventory_System.frmCustomerRecord.resources
+E:\Inventory Software\Sales and Inventory System\obj\x86\Debug\Sales_and_Inventory_System.frmCustomer.resources
+E:\Inventory Software\Sales and Inventory System\obj\x86\Debug\Sales_and_Inventory_System.frmCompany.resources
+E:\Inventory Software\Sales and Inventory System\obj\x86\Debug\Sales_and_Inventory_System.frmContacts.resources
+E:\Inventory Software\Sales and Inventory System\obj\x86\Debug\Sales_and_Inventory_System.frmBillingRecord.resources
+E:\Inventory Software\Sales and Inventory System\obj\x86\Debug\Sales_and_Inventory_System.frmBilling.resources
+E:\Inventory Software\Sales and Inventory System\obj\x86\Debug\Sales_and_Inventory_System.frmSalesReport.resources
+E:\Inventory Software\Sales and Inventory System\obj\x86\Debug\Sales_and_Inventory_System.frmReport.resources
+E:\Inventory Software\Sales and Inventory System\obj\x86\Debug\Sales_and_Inventory_System.frmCurrentStock.resources
+E:\Inventory Software\Sales and Inventory System\obj\x86\Debug\Sales_and_Inventory_System.frmPurchaseRecord.resources
+E:\Inventory Software\Sales and Inventory System\obj\x86\Debug\Sales_and_Inventory_System.frmProductRecord.resources
+E:\Inventory Software\Sales and Inventory System\obj\x86\Debug\Sales_and_Inventory_System.frmPurchase.resources
+E:\Inventory Software\Sales and Inventory System\obj\x86\Debug\Sales_and_Inventory_System.frmProduct.resources
+E:\Inventory Software\Sales and Inventory System\obj\x86\Debug\Sales_and_Inventory_System.frmCamera.resources
+E:\Inventory Software\Sales and Inventory System\obj\x86\Debug\Sales_and_Inventory_System.frmAbout.resources
+E:\Inventory Software\Sales and Inventory System\obj\x86\Debug\Sales_and_Inventory_System.frmActivation.resources
+E:\Inventory Software\Sales and Inventory System\obj\x86\Debug\Sales_and_Inventory_System.frmSubCategory.resources
+E:\Inventory Software\Sales and Inventory System\obj\x86\Debug\Sales_and_Inventory_System.frmChangePassword.resources
+E:\Inventory Software\Sales and Inventory System\obj\x86\Debug\Sales_and_Inventory_System.frmCategory.resources
+E:\Inventory Software\Sales and Inventory System\obj\x86\Debug\Sales_and_Inventory_System.frmMainMenu.resources
+E:\Inventory Software\Sales and Inventory System\obj\x86\Debug\Sales_and_Inventory_System.frmRegistration.resources
+E:\Inventory Software\Sales and Inventory System\obj\x86\Debug\Sales_and_Inventory_System.frmSupplier.resources
+E:\Inventory Software\Sales and Inventory System\obj\x86\Debug\Sales_and_Inventory_System.frmSystemInfo.resources
+E:\Inventory Software\Sales and Inventory System\obj\x86\Debug\Sales_and_Inventory_System.Resources.resources
+E:\Inventory Software\Sales and Inventory System\obj\x86\Debug\Sales and Inventory System.vbproj.GenerateResource.Cache
+E:\Inventory Software\Sales and Inventory System\obj\x86\Debug\Sales_and_Inventory_System.frmSalesmanRecord.resources
+E:\Inventory Software\Sales and Inventory System\obj\x86\Debug\Sales_and_Inventory_System.frmSalesman.resources
+E:\Inventory Software\Sales and Inventory System\obj\x86\Debug\Sales_and_Inventory_System.frmSMS.resources
+E:\Inventory Software\Sales and Inventory System\obj\x86\Debug\Sales_and_Inventory_System.frmSalesmanLedger.resources
+E:\Inventory Software\Sales and Inventory System\obj\x86\Debug\Sales_and_Inventory_System.frmSalesmanCommmissionReport.resources
+E:\Inventory Software\Sales and Inventory System\obj\x86\Debug\Sales_and_Inventory_System.frmTaxReport.resources
+E:\Inventory Software\Sales and Inventory System\obj\x86\Debug\Sales_and_Inventory_System.frmSendSMS.resources
+E:\Inventory Software\Sales and Inventory System\obj\x86\Debug\Sales_and_Inventory_System.frmCreditTermsReport.resources
+E:\Inventory Software\Sales and Inventory System\obj\x86\Debug\Sales_and_Inventory_System.frmCreditTermsStatementsReport.resources
+E:\Inventory Software v3.1\Sales and Inventory System\bin\Debug\Sales and Inventory System.exe.config
+E:\Inventory Software v3.1\Sales and Inventory System\obj\x86\Debug\Sales and Inventory System.exe
+E:\Inventory Software v3.1\Sales and Inventory System\obj\x86\Debug\Sales and Inventory System.xml
+E:\Inventory Software v3.1\Sales and Inventory System\obj\x86\Debug\Sales and Inventory System.pdb
+C:\Users\Vaibhav-PC\Desktop\Inventory Software v3.1\Sales and Inventory System\bin\Debug\Sales and Inventory System.exe.config
+C:\Users\Vaibhav-PC\Desktop\Inventory Software v3.1\Sales and Inventory System\obj\x86\Debug\Sales and Inventory System.exe
+C:\Users\Vaibhav-PC\Desktop\Inventory Software v3.1\Sales and Inventory System\obj\x86\Debug\Sales and Inventory System.xml
+C:\Users\Vaibhav-PC\Desktop\Inventory Software v3.1\Sales and Inventory System\obj\x86\Debug\Sales and Inventory System.pdb
+C:\Users\Vaibhav-PC\Desktop\Inventory Software v3.1\Sales and Inventory System\bin\Debug\Sales and Inventory System.exe
+C:\Users\Vaibhav-PC\Desktop\Inventory Software v3.1\Sales and Inventory System\bin\Debug\Sales and Inventory System.pdb
+C:\Users\Vaibhav-PC\Desktop\Inventory Software v3.1\Sales and Inventory System\bin\Debug\Sales and Inventory System.xml
+C:\Users\Vaibhav-PC\Desktop\Inventory Software v3.1\Sales and Inventory System\obj\x86\Debug\Sales and Inventory System.vbprojResolveAssemblyReference.cache
+C:\Users\Vaibhav-PC\Desktop\Inventory Software v3.1\Sales and Inventory System\obj\x86\Debug\Sales_and_Inventory_System.frmCreditTermsStatementsReport.resources
+C:\Users\Vaibhav-PC\Desktop\Inventory Software v3.1\Sales and Inventory System\obj\x86\Debug\Sales_and_Inventory_System.frmCreditTermsReport.resources
+C:\Users\Vaibhav-PC\Desktop\Inventory Software v3.1\Sales and Inventory System\obj\x86\Debug\Sales_and_Inventory_System.frmSendSMS.resources
+C:\Users\Vaibhav-PC\Desktop\Inventory Software v3.1\Sales and Inventory System\obj\x86\Debug\Sales_and_Inventory_System.frmTaxReport.resources
+C:\Users\Vaibhav-PC\Desktop\Inventory Software v3.1\Sales and Inventory System\obj\x86\Debug\Sales_and_Inventory_System.frmSalesmanCommmissionReport.resources
+C:\Users\Vaibhav-PC\Desktop\Inventory Software v3.1\Sales and Inventory System\obj\x86\Debug\Sales_and_Inventory_System.frmSalesmanLedger.resources
+C:\Users\Vaibhav-PC\Desktop\Inventory Software v3.1\Sales and Inventory System\obj\x86\Debug\Sales_and_Inventory_System.frmSalesmanRecord.resources
+C:\Users\Vaibhav-PC\Desktop\Inventory Software v3.1\Sales and Inventory System\obj\x86\Debug\Sales_and_Inventory_System.frmSalesman.resources
+C:\Users\Vaibhav-PC\Desktop\Inventory Software v3.1\Sales and Inventory System\obj\x86\Debug\Sales_and_Inventory_System.frmSMS.resources
+C:\Users\Vaibhav-PC\Desktop\Inventory Software v3.1\Sales and Inventory System\obj\x86\Debug\Sales_and_Inventory_System.frmCustomerLedger.resources
+C:\Users\Vaibhav-PC\Desktop\Inventory Software v3.1\Sales and Inventory System\obj\x86\Debug\Sales_and_Inventory_System.frmSupplierLedger.resources
+C:\Users\Vaibhav-PC\Desktop\Inventory Software v3.1\Sales and Inventory System\obj\x86\Debug\Sales_and_Inventory_System.frmTrialBalance.resources
+C:\Users\Vaibhav-PC\Desktop\Inventory Software v3.1\Sales and Inventory System\obj\x86\Debug\Sales_and_Inventory_System.frmPaymentRecord.resources
+C:\Users\Vaibhav-PC\Desktop\Inventory Software v3.1\Sales and Inventory System\obj\x86\Debug\Sales_and_Inventory_System.frmPayment.resources
+C:\Users\Vaibhav-PC\Desktop\Inventory Software v3.1\Sales and Inventory System\obj\x86\Debug\Sales_and_Inventory_System.frmGeneralDayBook.resources
+C:\Users\Vaibhav-PC\Desktop\Inventory Software v3.1\Sales and Inventory System\obj\x86\Debug\Sales_and_Inventory_System.frmGeneralLedger.resources
+C:\Users\Vaibhav-PC\Desktop\Inventory Software v3.1\Sales and Inventory System\obj\x86\Debug\Sales_and_Inventory_System.frmPurchaseDaybook.resources
+C:\Users\Vaibhav-PC\Desktop\Inventory Software v3.1\Sales and Inventory System\obj\x86\Debug\Sales_and_Inventory_System.frmSqlServerSetting.resources
+C:\Users\Vaibhav-PC\Desktop\Inventory Software v3.1\Sales and Inventory System\obj\x86\Debug\Sales_and_Inventory_System.frmOverallReport.resources
+C:\Users\Vaibhav-PC\Desktop\Inventory Software v3.1\Sales and Inventory System\obj\x86\Debug\Sales_and_Inventory_System.frmCreditorsAndDebtorsReport.resources
+C:\Users\Vaibhav-PC\Desktop\Inventory Software v3.1\Sales and Inventory System\obj\x86\Debug\Sales_and_Inventory_System.frmProfitAndLossReport.resources
+C:\Users\Vaibhav-PC\Desktop\Inventory Software v3.1\Sales and Inventory System\obj\x86\Debug\Sales_and_Inventory_System.frmPurchaseReport.resources
+C:\Users\Vaibhav-PC\Desktop\Inventory Software v3.1\Sales and Inventory System\obj\x86\Debug\Sales_and_Inventory_System.frmStockInAndOutReport.resources
+C:\Users\Vaibhav-PC\Desktop\Inventory Software v3.1\Sales and Inventory System\obj\x86\Debug\Sales_and_Inventory_System.frmVoucher.resources
+C:\Users\Vaibhav-PC\Desktop\Inventory Software v3.1\Sales and Inventory System\obj\x86\Debug\Sales_and_Inventory_System.frmVoucherRecord.resources
+C:\Users\Vaibhav-PC\Desktop\Inventory Software v3.1\Sales and Inventory System\obj\x86\Debug\Sales_and_Inventory_System.frmVoucherReport.resources
+C:\Users\Vaibhav-PC\Desktop\Inventory Software v3.1\Sales and Inventory System\obj\x86\Debug\Sales_and_Inventory_System.frmRegistration1.resources
+C:\Users\Vaibhav-PC\Desktop\Inventory Software v3.1\Sales and Inventory System\obj\x86\Debug\Sales_and_Inventory_System.frmSMSSetting.resources
+C:\Users\Vaibhav-PC\Desktop\Inventory Software v3.1\Sales and Inventory System\obj\x86\Debug\Sales_and_Inventory_System.frmServiceDoneReport.resources
+C:\Users\Vaibhav-PC\Desktop\Inventory Software v3.1\Sales and Inventory System\obj\x86\Debug\Sales_and_Inventory_System.frmCustomerRecord2.resources
+C:\Users\Vaibhav-PC\Desktop\Inventory Software v3.1\Sales and Inventory System\obj\x86\Debug\Sales_and_Inventory_System.frmBillingRecord1.resources
+C:\Users\Vaibhav-PC\Desktop\Inventory Software v3.1\Sales and Inventory System\obj\x86\Debug\Sales_and_Inventory_System.frmServicesRecord1.resources
+C:\Users\Vaibhav-PC\Desktop\Inventory Software v3.1\Sales and Inventory System\obj\x86\Debug\Sales_and_Inventory_System.frmBilling1.resources
+C:\Users\Vaibhav-PC\Desktop\Inventory Software v3.1\Sales and Inventory System\obj\x86\Debug\Sales_and_Inventory_System.frmQuotationRecord1.resources
+C:\Users\Vaibhav-PC\Desktop\Inventory Software v3.1\Sales and Inventory System\obj\x86\Debug\Sales_and_Inventory_System.frmQuotationRecord.resources
+C:\Users\Vaibhav-PC\Desktop\Inventory Software v3.1\Sales and Inventory System\obj\x86\Debug\Sales_and_Inventory_System.frmSplash.resources
+C:\Users\Vaibhav-PC\Desktop\Inventory Software v3.1\Sales and Inventory System\obj\x86\Debug\Sales_and_Inventory_System.frmQuotation.resources
+C:\Users\Vaibhav-PC\Desktop\Inventory Software v3.1\Sales and Inventory System\obj\x86\Debug\Sales_and_Inventory_System.frmServicesRecord.resources
+C:\Users\Vaibhav-PC\Desktop\Inventory Software v3.1\Sales and Inventory System\obj\x86\Debug\Sales_and_Inventory_System.frmServices.resources
+C:\Users\Vaibhav-PC\Desktop\Inventory Software v3.1\Sales and Inventory System\obj\x86\Debug\Sales_and_Inventory_System.frmLogin.resources
+C:\Users\Vaibhav-PC\Desktop\Inventory Software v3.1\Sales and Inventory System\obj\x86\Debug\Sales_and_Inventory_System.frmLogs.resources
+C:\Users\Vaibhav-PC\Desktop\Inventory Software v3.1\Sales and Inventory System\obj\x86\Debug\Sales_and_Inventory_System.frmSupplierRecord.resources
+C:\Users\Vaibhav-PC\Desktop\Inventory Software v3.1\Sales and Inventory System\obj\x86\Debug\Sales_and_Inventory_System.frmCustomerRecord1.resources
+C:\Users\Vaibhav-PC\Desktop\Inventory Software v3.1\Sales and Inventory System\obj\x86\Debug\Sales_and_Inventory_System.frmCustomerRecord.resources
+C:\Users\Vaibhav-PC\Desktop\Inventory Software v3.1\Sales and Inventory System\obj\x86\Debug\Sales_and_Inventory_System.frmCustomer.resources
+C:\Users\Vaibhav-PC\Desktop\Inventory Software v3.1\Sales and Inventory System\obj\x86\Debug\Sales_and_Inventory_System.frmCompany.resources
+C:\Users\Vaibhav-PC\Desktop\Inventory Software v3.1\Sales and Inventory System\obj\x86\Debug\Sales_and_Inventory_System.frmContacts.resources
+C:\Users\Vaibhav-PC\Desktop\Inventory Software v3.1\Sales and Inventory System\obj\x86\Debug\Sales_and_Inventory_System.frmBillingRecord.resources
+C:\Users\Vaibhav-PC\Desktop\Inventory Software v3.1\Sales and Inventory System\obj\x86\Debug\Sales_and_Inventory_System.frmBilling.resources
+C:\Users\Vaibhav-PC\Desktop\Inventory Software v3.1\Sales and Inventory System\obj\x86\Debug\Sales_and_Inventory_System.frmSalesReport.resources
+C:\Users\Vaibhav-PC\Desktop\Inventory Software v3.1\Sales and Inventory System\obj\x86\Debug\Sales_and_Inventory_System.frmReport.resources
+C:\Users\Vaibhav-PC\Desktop\Inventory Software v3.1\Sales and Inventory System\obj\x86\Debug\Sales_and_Inventory_System.frmCurrentStock.resources
+C:\Users\Vaibhav-PC\Desktop\Inventory Software v3.1\Sales and Inventory System\obj\x86\Debug\Sales_and_Inventory_System.frmPurchaseRecord.resources
+C:\Users\Vaibhav-PC\Desktop\Inventory Software v3.1\Sales and Inventory System\obj\x86\Debug\Sales_and_Inventory_System.frmProductRecord.resources
+C:\Users\Vaibhav-PC\Desktop\Inventory Software v3.1\Sales and Inventory System\obj\x86\Debug\Sales_and_Inventory_System.frmPurchase.resources
+C:\Users\Vaibhav-PC\Desktop\Inventory Software v3.1\Sales and Inventory System\obj\x86\Debug\Sales_and_Inventory_System.frmProduct.resources
+C:\Users\Vaibhav-PC\Desktop\Inventory Software v3.1\Sales and Inventory System\obj\x86\Debug\Sales_and_Inventory_System.frmCamera.resources
+C:\Users\Vaibhav-PC\Desktop\Inventory Software v3.1\Sales and Inventory System\obj\x86\Debug\Sales_and_Inventory_System.frmAbout.resources
+C:\Users\Vaibhav-PC\Desktop\Inventory Software v3.1\Sales and Inventory System\obj\x86\Debug\Sales_and_Inventory_System.frmActivation.resources
+C:\Users\Vaibhav-PC\Desktop\Inventory Software v3.1\Sales and Inventory System\obj\x86\Debug\Sales_and_Inventory_System.frmSubCategory.resources
+C:\Users\Vaibhav-PC\Desktop\Inventory Software v3.1\Sales and Inventory System\obj\x86\Debug\Sales_and_Inventory_System.frmChangePassword.resources
+C:\Users\Vaibhav-PC\Desktop\Inventory Software v3.1\Sales and Inventory System\obj\x86\Debug\Sales_and_Inventory_System.frmCategory.resources
+C:\Users\Vaibhav-PC\Desktop\Inventory Software v3.1\Sales and Inventory System\obj\x86\Debug\Sales_and_Inventory_System.frmMainMenu.resources
+C:\Users\Vaibhav-PC\Desktop\Inventory Software v3.1\Sales and Inventory System\obj\x86\Debug\Sales_and_Inventory_System.frmRegistration.resources
+C:\Users\Vaibhav-PC\Desktop\Inventory Software v3.1\Sales and Inventory System\obj\x86\Debug\Sales_and_Inventory_System.frmSupplier.resources
+C:\Users\Vaibhav-PC\Desktop\Inventory Software v3.1\Sales and Inventory System\obj\x86\Debug\Sales_and_Inventory_System.frmSystemInfo.resources
+C:\Users\Vaibhav-PC\Desktop\Inventory Software v3.1\Sales and Inventory System\obj\x86\Debug\Sales_and_Inventory_System.Resources.resources
+C:\Users\Vaibhav-PC\Desktop\Inventory Software v3.1\Sales and Inventory System\obj\x86\Debug\Sales and Inventory System.vbproj.GenerateResource.Cache
+C:\Users\Vaibhav-PC\Desktop\Inventory Software v3.1\Sales and Inventory System\obj\x86\Debug\Sales_and_Inventory_System.frmStockStatus.resources
+C:\Users\Vaibhav-PC\Desktop\Inventory Software v3.1\Sales and Inventory System\obj\x86\Debug\Sales_and_Inventory_System.frmContactMe.resources
+C:\Users\Vaibhav-PC\Desktop\Sales and Inventory Management System\Sales and Inventory System\bin\Debug\Sales and Inventory System.exe.config
+C:\Users\Vaibhav-PC\Desktop\Sales and Inventory Management System\Sales and Inventory System\obj\x86\Debug\Sales and Inventory System.exe
+C:\Users\Vaibhav-PC\Desktop\Sales and Inventory Management System\Sales and Inventory System\obj\x86\Debug\Sales and Inventory System.xml
+C:\Users\Vaibhav-PC\Desktop\Sales and Inventory Management System\Sales and Inventory System\obj\x86\Debug\Sales and Inventory System.pdb
+C:\Users\Vaibhav-PC\Desktop\Sales and Inventory Management System\Sales and Inventory System\bin\Debug\Sales and Inventory System.exe
+C:\Users\Vaibhav-PC\Desktop\Sales and Inventory Management System\Sales and Inventory System\bin\Debug\Sales and Inventory System.pdb
+C:\Users\Vaibhav-PC\Desktop\Sales and Inventory Management System\Sales and Inventory System\bin\Debug\Sales and Inventory System.xml
+C:\Users\Vaibhav-PC\Desktop\Sales and Inventory Management System\Sales and Inventory System\obj\x86\Debug\Sales and Inventory System.vbprojResolveAssemblyReference.cache
+C:\Users\Vaibhav-PC\Desktop\Sales and Inventory Management System\Sales and Inventory System\obj\x86\Debug\Sales_and_Inventory_System.frmContactMe.resources
+C:\Users\Vaibhav-PC\Desktop\Sales and Inventory Management System\Sales and Inventory System\obj\x86\Debug\Sales_and_Inventory_System.frmStockStatus.resources
+C:\Users\Vaibhav-PC\Desktop\Sales and Inventory Management System\Sales and Inventory System\obj\x86\Debug\Sales_and_Inventory_System.frmCreditTermsStatementsReport.resources
+C:\Users\Vaibhav-PC\Desktop\Sales and Inventory Management System\Sales and Inventory System\obj\x86\Debug\Sales_and_Inventory_System.frmCreditTermsReport.resources
+C:\Users\Vaibhav-PC\Desktop\Sales and Inventory Management System\Sales and Inventory System\obj\x86\Debug\Sales_and_Inventory_System.frmSendSMS.resources
+C:\Users\Vaibhav-PC\Desktop\Sales and Inventory Management System\Sales and Inventory System\obj\x86\Debug\Sales_and_Inventory_System.frmTaxReport.resources
+C:\Users\Vaibhav-PC\Desktop\Sales and Inventory Management System\Sales and Inventory System\obj\x86\Debug\Sales_and_Inventory_System.frmSalesmanCommmissionReport.resources
+C:\Users\Vaibhav-PC\Desktop\Sales and Inventory Management System\Sales and Inventory System\obj\x86\Debug\Sales_and_Inventory_System.frmSalesmanLedger.resources
+C:\Users\Vaibhav-PC\Desktop\Sales and Inventory Management System\Sales and Inventory System\obj\x86\Debug\Sales_and_Inventory_System.frmSalesmanRecord.resources
+C:\Users\Vaibhav-PC\Desktop\Sales and Inventory Management System\Sales and Inventory System\obj\x86\Debug\Sales_and_Inventory_System.frmSalesman.resources
+C:\Users\Vaibhav-PC\Desktop\Sales and Inventory Management System\Sales and Inventory System\obj\x86\Debug\Sales_and_Inventory_System.frmSMS.resources
+C:\Users\Vaibhav-PC\Desktop\Sales and Inventory Management System\Sales and Inventory System\obj\x86\Debug\Sales_and_Inventory_System.frmCustomerLedger.resources
+C:\Users\Vaibhav-PC\Desktop\Sales and Inventory Management System\Sales and Inventory System\obj\x86\Debug\Sales_and_Inventory_System.frmSupplierLedger.resources
+C:\Users\Vaibhav-PC\Desktop\Sales and Inventory Management System\Sales and Inventory System\obj\x86\Debug\Sales_and_Inventory_System.frmTrialBalance.resources
+C:\Users\Vaibhav-PC\Desktop\Sales and Inventory Management System\Sales and Inventory System\obj\x86\Debug\Sales_and_Inventory_System.frmPaymentRecord.resources
+C:\Users\Vaibhav-PC\Desktop\Sales and Inventory Management System\Sales and Inventory System\obj\x86\Debug\Sales_and_Inventory_System.frmPayment.resources
+C:\Users\Vaibhav-PC\Desktop\Sales and Inventory Management System\Sales and Inventory System\obj\x86\Debug\Sales_and_Inventory_System.frmGeneralDayBook.resources
+C:\Users\Vaibhav-PC\Desktop\Sales and Inventory Management System\Sales and Inventory System\obj\x86\Debug\Sales_and_Inventory_System.frmGeneralLedger.resources
+C:\Users\Vaibhav-PC\Desktop\Sales and Inventory Management System\Sales and Inventory System\obj\x86\Debug\Sales_and_Inventory_System.frmPurchaseDaybook.resources
+C:\Users\Vaibhav-PC\Desktop\Sales and Inventory Management System\Sales and Inventory System\obj\x86\Debug\Sales_and_Inventory_System.frmSqlServerSetting.resources
+C:\Users\Vaibhav-PC\Desktop\Sales and Inventory Management System\Sales and Inventory System\obj\x86\Debug\Sales_and_Inventory_System.frmOverallReport.resources
+C:\Users\Vaibhav-PC\Desktop\Sales and Inventory Management System\Sales and Inventory System\obj\x86\Debug\Sales_and_Inventory_System.frmCreditorsAndDebtorsReport.resources
+C:\Users\Vaibhav-PC\Desktop\Sales and Inventory Management System\Sales and Inventory System\obj\x86\Debug\Sales_and_Inventory_System.frmProfitAndLossReport.resources
+C:\Users\Vaibhav-PC\Desktop\Sales and Inventory Management System\Sales and Inventory System\obj\x86\Debug\Sales_and_Inventory_System.frmPurchaseReport.resources
+C:\Users\Vaibhav-PC\Desktop\Sales and Inventory Management System\Sales and Inventory System\obj\x86\Debug\Sales_and_Inventory_System.frmStockInAndOutReport.resources
+C:\Users\Vaibhav-PC\Desktop\Sales and Inventory Management System\Sales and Inventory System\obj\x86\Debug\Sales_and_Inventory_System.frmVoucher.resources
+C:\Users\Vaibhav-PC\Desktop\Sales and Inventory Management System\Sales and Inventory System\obj\x86\Debug\Sales_and_Inventory_System.frmVoucherRecord.resources
+C:\Users\Vaibhav-PC\Desktop\Sales and Inventory Management System\Sales and Inventory System\obj\x86\Debug\Sales_and_Inventory_System.frmVoucherReport.resources
+C:\Users\Vaibhav-PC\Desktop\Sales and Inventory Management System\Sales and Inventory System\obj\x86\Debug\Sales_and_Inventory_System.frmRegistration1.resources
+C:\Users\Vaibhav-PC\Desktop\Sales and Inventory Management System\Sales and Inventory System\obj\x86\Debug\Sales_and_Inventory_System.frmSMSSetting.resources
+C:\Users\Vaibhav-PC\Desktop\Sales and Inventory Management System\Sales and Inventory System\obj\x86\Debug\Sales_and_Inventory_System.frmServiceDoneReport.resources
+C:\Users\Vaibhav-PC\Desktop\Sales and Inventory Management System\Sales and Inventory System\obj\x86\Debug\Sales_and_Inventory_System.frmCustomerRecord2.resources
+C:\Users\Vaibhav-PC\Desktop\Sales and Inventory Management System\Sales and Inventory System\obj\x86\Debug\Sales_and_Inventory_System.frmBillingRecord1.resources
+C:\Users\Vaibhav-PC\Desktop\Sales and Inventory Management System\Sales and Inventory System\obj\x86\Debug\Sales_and_Inventory_System.frmServicesRecord1.resources
+C:\Users\Vaibhav-PC\Desktop\Sales and Inventory Management System\Sales and Inventory System\obj\x86\Debug\Sales_and_Inventory_System.frmBilling1.resources
+C:\Users\Vaibhav-PC\Desktop\Sales and Inventory Management System\Sales and Inventory System\obj\x86\Debug\Sales_and_Inventory_System.frmQuotationRecord1.resources
+C:\Users\Vaibhav-PC\Desktop\Sales and Inventory Management System\Sales and Inventory System\obj\x86\Debug\Sales_and_Inventory_System.frmQuotationRecord.resources
+C:\Users\Vaibhav-PC\Desktop\Sales and Inventory Management System\Sales and Inventory System\obj\x86\Debug\Sales_and_Inventory_System.frmSplash.resources
+C:\Users\Vaibhav-PC\Desktop\Sales and Inventory Management System\Sales and Inventory System\obj\x86\Debug\Sales_and_Inventory_System.frmQuotation.resources
+C:\Users\Vaibhav-PC\Desktop\Sales and Inventory Management System\Sales and Inventory System\obj\x86\Debug\Sales_and_Inventory_System.frmServicesList.resources
+C:\Users\Vaibhav-PC\Desktop\Sales and Inventory Management System\Sales and Inventory System\obj\x86\Debug\Sales_and_Inventory_System.frmServices.resources
+C:\Users\Vaibhav-PC\Desktop\Sales and Inventory Management System\Sales and Inventory System\obj\x86\Debug\Sales_and_Inventory_System.frmLogin.resources
+C:\Users\Vaibhav-PC\Desktop\Sales and Inventory Management System\Sales and Inventory System\obj\x86\Debug\Sales_and_Inventory_System.frmLogs.resources
+C:\Users\Vaibhav-PC\Desktop\Sales and Inventory Management System\Sales and Inventory System\obj\x86\Debug\Sales_and_Inventory_System.frmSupplierRecord.resources
+C:\Users\Vaibhav-PC\Desktop\Sales and Inventory Management System\Sales and Inventory System\obj\x86\Debug\Sales_and_Inventory_System.frmCustomerRecord1.resources
+C:\Users\Vaibhav-PC\Desktop\Sales and Inventory Management System\Sales and Inventory System\obj\x86\Debug\Sales_and_Inventory_System.frmCustomerRecord.resources
+C:\Users\Vaibhav-PC\Desktop\Sales and Inventory Management System\Sales and Inventory System\obj\x86\Debug\Sales_and_Inventory_System.frmCustomer.resources
+C:\Users\Vaibhav-PC\Desktop\Sales and Inventory Management System\Sales and Inventory System\obj\x86\Debug\Sales_and_Inventory_System.frmCompany.resources
+C:\Users\Vaibhav-PC\Desktop\Sales and Inventory Management System\Sales and Inventory System\obj\x86\Debug\Sales_and_Inventory_System.frmContacts.resources
+C:\Users\Vaibhav-PC\Desktop\Sales and Inventory Management System\Sales and Inventory System\obj\x86\Debug\Sales_and_Inventory_System.frmBillingRecord.resources
+C:\Users\Vaibhav-PC\Desktop\Sales and Inventory Management System\Sales and Inventory System\obj\x86\Debug\Sales_and_Inventory_System.frmBilling.resources
+C:\Users\Vaibhav-PC\Desktop\Sales and Inventory Management System\Sales and Inventory System\obj\x86\Debug\Sales_and_Inventory_System.frmSalesReport.resources
+C:\Users\Vaibhav-PC\Desktop\Sales and Inventory Management System\Sales and Inventory System\obj\x86\Debug\Sales_and_Inventory_System.frmReport.resources
+C:\Users\Vaibhav-PC\Desktop\Sales and Inventory Management System\Sales and Inventory System\obj\x86\Debug\Sales_and_Inventory_System.frmCurrentStock.resources
+C:\Users\Vaibhav-PC\Desktop\Sales and Inventory Management System\Sales and Inventory System\obj\x86\Debug\Sales_and_Inventory_System.frmPurchaseRecord.resources
+C:\Users\Vaibhav-PC\Desktop\Sales and Inventory Management System\Sales and Inventory System\obj\x86\Debug\Sales_and_Inventory_System.frmProductRecord.resources
+C:\Users\Vaibhav-PC\Desktop\Sales and Inventory Management System\Sales and Inventory System\obj\x86\Debug\Sales_and_Inventory_System.frmPurchase.resources
+C:\Users\Vaibhav-PC\Desktop\Sales and Inventory Management System\Sales and Inventory System\obj\x86\Debug\Sales_and_Inventory_System.frmProduct.resources
+C:\Users\Vaibhav-PC\Desktop\Sales and Inventory Management System\Sales and Inventory System\obj\x86\Debug\Sales_and_Inventory_System.frmCamera.resources
+C:\Users\Vaibhav-PC\Desktop\Sales and Inventory Management System\Sales and Inventory System\obj\x86\Debug\Sales_and_Inventory_System.frmAbout.resources
+C:\Users\Vaibhav-PC\Desktop\Sales and Inventory Management System\Sales and Inventory System\obj\x86\Debug\Sales_and_Inventory_System.frmActivation.resources
+C:\Users\Vaibhav-PC\Desktop\Sales and Inventory Management System\Sales and Inventory System\obj\x86\Debug\Sales_and_Inventory_System.frmSubCategory.resources
+C:\Users\Vaibhav-PC\Desktop\Sales and Inventory Management System\Sales and Inventory System\obj\x86\Debug\Sales_and_Inventory_System.frmChangePassword.resources
+C:\Users\Vaibhav-PC\Desktop\Sales and Inventory Management System\Sales and Inventory System\obj\x86\Debug\Sales_and_Inventory_System.frmCategory.resources
+C:\Users\Vaibhav-PC\Desktop\Sales and Inventory Management System\Sales and Inventory System\obj\x86\Debug\Sales_and_Inventory_System.frmMainMenu.resources
+C:\Users\Vaibhav-PC\Desktop\Sales and Inventory Management System\Sales and Inventory System\obj\x86\Debug\Sales_and_Inventory_System.frmRegistration.resources
+C:\Users\Vaibhav-PC\Desktop\Sales and Inventory Management System\Sales and Inventory System\obj\x86\Debug\Sales_and_Inventory_System.frmSupplier.resources
+C:\Users\Vaibhav-PC\Desktop\Sales and Inventory Management System\Sales and Inventory System\obj\x86\Debug\Sales_and_Inventory_System.frmSystemInfo.resources
+C:\Users\Vaibhav-PC\Desktop\Sales and Inventory Management System\Sales and Inventory System\obj\x86\Debug\Sales_and_Inventory_System.Resources.resources
+C:\Users\Vaibhav-PC\Desktop\Sales and Inventory Management System\Sales and Inventory System\obj\x86\Debug\Sales and Inventory System.vbproj.GenerateResource.Cache
