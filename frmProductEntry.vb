@@ -339,7 +339,7 @@ Public Class frmProductEntry
         End Try
     End Sub
 
-    Private Sub btnNew_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles btnNew.Click
+    Private Sub btnClear_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles btnClear.Click
         Reset()
     End Sub
 

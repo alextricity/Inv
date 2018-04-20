@@ -60,7 +60,7 @@ Partial Class frmCustomer
         Me.btnClose = New System.Windows.Forms.Button()
         Me.btnUpdate = New System.Windows.Forms.Button()
         Me.btnSave = New System.Windows.Forms.Button()
-        Me.btnNew = New System.Windows.Forms.Button()
+        Me.btnClear = New System.Windows.Forms.Button()
         Me.txtID = New System.Windows.Forms.TextBox()
         Me.OpenFileDialog1 = New System.Windows.Forms.OpenFileDialog()
         Label8 = New System.Windows.Forms.Label()
@@ -427,7 +427,7 @@ Partial Class frmCustomer
         Me.Panel3.Controls.Add(Me.btnClose)
         Me.Panel3.Controls.Add(Me.btnUpdate)
         Me.Panel3.Controls.Add(Me.btnSave)
-        Me.Panel3.Controls.Add(Me.btnNew)
+        Me.Panel3.Controls.Add(Me.btnClear)
         Me.Panel3.Location = New System.Drawing.Point(691, 45)
         Me.Panel3.Name = "Panel3"
         Me.Panel3.Size = New System.Drawing.Size(111, 192)
@@ -503,19 +503,19 @@ Partial Class frmCustomer
         Me.btnSave.Text = "&Save"
         Me.btnSave.UseVisualStyleBackColor = False
         '
-        'btnNew
+        'btnClear
         '
-        Me.btnNew.BackColor = System.Drawing.Color.Indigo
-        Me.btnNew.Cursor = System.Windows.Forms.Cursors.Hand
-        Me.btnNew.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-        Me.btnNew.Font = New System.Drawing.Font("Palatino Linotype", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.btnNew.ForeColor = System.Drawing.SystemColors.ButtonHighlight
-        Me.btnNew.Location = New System.Drawing.Point(4, 2)
-        Me.btnNew.Name = "btnNew"
-        Me.btnNew.Size = New System.Drawing.Size(102, 29)
-        Me.btnNew.TabIndex = 0
-        Me.btnNew.Text = "&New"
-        Me.btnNew.UseVisualStyleBackColor = False
+        Me.btnClear.BackColor = System.Drawing.Color.Indigo
+        Me.btnClear.Cursor = System.Windows.Forms.Cursors.Hand
+        Me.btnClear.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.btnClear.Font = New System.Drawing.Font("Palatino Linotype", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.btnClear.ForeColor = System.Drawing.SystemColors.ButtonHighlight
+        Me.btnClear.Location = New System.Drawing.Point(4, 2)
+        Me.btnClear.Name = "btnClear"
+        Me.btnClear.Size = New System.Drawing.Size(102, 29)
+        Me.btnClear.TabIndex = 0
+        Me.btnClear.Text = "&New"
+        Me.btnClear.UseVisualStyleBackColor = False
         '
         'txtID
         '
@@ -560,7 +560,7 @@ Partial Class frmCustomer
     Friend WithEvents btnClose As System.Windows.Forms.Button
     Friend WithEvents btnUpdate As System.Windows.Forms.Button
     Friend WithEvents btnSave As System.Windows.Forms.Button
-    Friend WithEvents btnNew As System.Windows.Forms.Button
+    Friend WithEvents btnClear As System.Windows.Forms.Button
     Friend WithEvents Label7 As System.Windows.Forms.Label
     Friend WithEvents Label6 As System.Windows.Forms.Label
     Friend WithEvents Label5 As System.Windows.Forms.Label

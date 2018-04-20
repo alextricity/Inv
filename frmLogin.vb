@@ -17,18 +17,13 @@ Public Class frmLogin
             con = New OdbcConnection(cs)
             con.Open()
             cmd = con.CreateCommand()
-            cmd.CommandText = "SELECT RTRIM(UserID),RTRIM(Password) FROM Registration where UserID = @d1 and Password=@d2 and Active='Yes'"
-            cmd.Parameters.AddWithValue("@d1", UserID.Text)
-            cmd.Parameters.AddWithValue("@d2", Password.Text)
+            cmd.CommandText = "SELECT UserID,Password,Active FROM Registration where UserID='" & UserID.Text & "' and Password='" & Password.Text & "' and Active='Yes'"
             rdr = cmd.ExecuteReader()
-            MsgBox("stop")
             If rdr.Read() Then
                 con = New OdbcConnection(cs)
                 con.Open()
                 cmd = con.CreateCommand()
-                cmd.CommandText = "SELECT usertype FROM Registration where UserID=@d3 and Password=@d4"
-                cmd.Parameters.AddWithValue("@d3", UserID.Text)
-                cmd.Parameters.AddWithValue("@d4", Encrypt(Password.Text))
+                cmd.CommandText = "SELECT UserType FROM Registration where UserID='" & UserID.Text & "' and Password='" & Password.Text & "'" 'Encrypt(Password.Text)
                 rdr = cmd.ExecuteReader()
                 If rdr.Read() Then
                     UserType.Text = rdr.GetValue(0).ToString.Trim

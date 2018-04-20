@@ -21,24 +21,19 @@ Module ModFunc
     Sub SMS(ByVal st1 As String)
         con = New OdbcConnection(cs)
         con.Open()
-        Dim cb As String = "insert into SMS(Message,Date) VALUES (@d1,@d2)"
+        Dim cb As String = "insert into SMS(Message,Date) VALUES ('" & st1 & "','" & System.DateTime.Now & ")"
         cmd = New OdbcCommand(cb)
         cmd.Connection = con
-        cmd.Parameters.AddWithValue("@d1", st1)
-        cmd.Parameters.AddWithValue("@d2", System.DateTime.Now)
-        cmd.ExecuteReader()
+        cmd.ExecuteNonQuery()
         con.Close()
     End Sub
     Sub LogFunc(ByVal st1 As String, ByVal st2 As String)
         con = New OdbcConnection(cs)
         con.Open()
-        Dim cb As String = "insert into Logs(UserID,Date,Operation) VALUES (@d1,@d2,@d3)"
+        Dim cb As String = "insert into Logs (UserID, [Date], Operation) VALUES ('" & st1 & "', '" & System.DateTime.Now & "','" & st2 & "')"
         cmd = New OdbcCommand(cb)
         cmd.Connection = con
-        cmd.Parameters.AddWithValue("@d1", st1)
-        cmd.Parameters.AddWithValue("@d2", System.DateTime.Now)
-        cmd.Parameters.AddWithValue("@d3", st2)
-        cmd.ExecuteReader()
+        cmd.ExecuteNonQuery()
         con.Close()
     End Sub
     Sub SMSFunc(ByVal st1 As String, ByVal st2 As String, ByVal st3 As String)

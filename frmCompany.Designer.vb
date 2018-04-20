@@ -54,7 +54,7 @@ Partial Class frmCompany
         Me.btnClose = New System.Windows.Forms.Button()
         Me.btnUpdate = New System.Windows.Forms.Button()
         Me.btnSave = New System.Windows.Forms.Button()
-        Me.btnNew = New System.Windows.Forms.Button()
+        Me.btnClear = New System.Windows.Forms.Button()
         Me.dgw = New System.Windows.Forms.DataGridView()
         Me.Column9 = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.Column1 = New System.Windows.Forms.DataGridViewTextBoxColumn()
@@ -306,7 +306,7 @@ Partial Class frmCompany
         Me.Panel3.Controls.Add(Me.btnClose)
         Me.Panel3.Controls.Add(Me.btnUpdate)
         Me.Panel3.Controls.Add(Me.btnSave)
-        Me.Panel3.Controls.Add(Me.btnNew)
+        Me.Panel3.Controls.Add(Me.btnClear)
         Me.Panel3.Location = New System.Drawing.Point(542, 42)
         Me.Panel3.Name = "Panel3"
         Me.Panel3.Size = New System.Drawing.Size(111, 178)
@@ -368,19 +368,19 @@ Partial Class frmCompany
         Me.btnSave.Text = "&Save"
         Me.btnSave.UseVisualStyleBackColor = False
         '
-        'btnNew
+        'btnClear
         '
-        Me.btnNew.BackColor = System.Drawing.Color.Indigo
-        Me.btnNew.Cursor = System.Windows.Forms.Cursors.Hand
-        Me.btnNew.FlatStyle = System.Windows.Forms.FlatStyle.Popup
-        Me.btnNew.Font = New System.Drawing.Font("Palatino Linotype", 9.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.btnNew.ForeColor = System.Drawing.SystemColors.HighlightText
-        Me.btnNew.Location = New System.Drawing.Point(13, 10)
-        Me.btnNew.Name = "btnNew"
-        Me.btnNew.Size = New System.Drawing.Size(82, 28)
-        Me.btnNew.TabIndex = 0
-        Me.btnNew.Text = "&New"
-        Me.btnNew.UseVisualStyleBackColor = False
+        Me.btnClear.BackColor = System.Drawing.Color.Indigo
+        Me.btnClear.Cursor = System.Windows.Forms.Cursors.Hand
+        Me.btnClear.FlatStyle = System.Windows.Forms.FlatStyle.Popup
+        Me.btnClear.Font = New System.Drawing.Font("Palatino Linotype", 9.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.btnClear.ForeColor = System.Drawing.SystemColors.HighlightText
+        Me.btnClear.Location = New System.Drawing.Point(13, 10)
+        Me.btnClear.Name = "btnClear"
+        Me.btnClear.Size = New System.Drawing.Size(82, 28)
+        Me.btnClear.TabIndex = 0
+        Me.btnClear.Text = "&New"
+        Me.btnClear.UseVisualStyleBackColor = False
         '
         'dgw
         '
@@ -538,7 +538,7 @@ Partial Class frmCompany
     Friend WithEvents btnClose As System.Windows.Forms.Button
     Friend WithEvents btnUpdate As System.Windows.Forms.Button
     Friend WithEvents btnSave As System.Windows.Forms.Button
-    Friend WithEvents btnNew As System.Windows.Forms.Button
+    Friend WithEvents btnClear As System.Windows.Forms.Button
     Friend WithEvents dgw As System.Windows.Forms.DataGridView
     Friend WithEvents Label7 As System.Windows.Forms.Label
     Friend WithEvents Label6 As System.Windows.Forms.Label

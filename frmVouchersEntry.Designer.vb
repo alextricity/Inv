@@ -64,7 +64,7 @@ Partial Class frmVouchersEntry
         Me.btnClose = New System.Windows.Forms.Button()
         Me.btnUpdate = New System.Windows.Forms.Button()
         Me.btnSave = New System.Windows.Forms.Button()
-        Me.btnNew = New System.Windows.Forms.Button()
+        Me.btnClear = New System.Windows.Forms.Button()
         Me.ToolTip1 = New System.Windows.Forms.ToolTip(Me.components)
         Me.Timer1 = New System.Windows.Forms.Timer(Me.components)
         Me.Column1 = New System.Windows.Forms.DataGridViewTextBoxColumn()
@@ -470,7 +470,7 @@ Partial Class frmVouchersEntry
         Me.Panel4.Controls.Add(Me.btnClose)
         Me.Panel4.Controls.Add(Me.btnUpdate)
         Me.Panel4.Controls.Add(Me.btnSave)
-        Me.Panel4.Controls.Add(Me.btnNew)
+        Me.Panel4.Controls.Add(Me.btnClear)
         Me.Panel4.Location = New System.Drawing.Point(3, 251)
         Me.Panel4.Name = "Panel4"
         Me.Panel4.Size = New System.Drawing.Size(318, 79)
@@ -548,19 +548,19 @@ Partial Class frmVouchersEntry
         Me.btnSave.Text = "Save + Print"
         Me.btnSave.UseVisualStyleBackColor = False
         '
-        'btnNew
+        'btnClear
         '
-        Me.btnNew.BackColor = System.Drawing.Color.Maroon
-        Me.btnNew.Cursor = System.Windows.Forms.Cursors.Hand
-        Me.btnNew.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-        Me.btnNew.Font = New System.Drawing.Font("Palatino Linotype", 9.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.btnNew.ForeColor = System.Drawing.SystemColors.ButtonHighlight
-        Me.btnNew.Location = New System.Drawing.Point(8, 7)
-        Me.btnNew.Name = "btnNew"
-        Me.btnNew.Size = New System.Drawing.Size(93, 28)
-        Me.btnNew.TabIndex = 0
-        Me.btnNew.Text = "New"
-        Me.btnNew.UseVisualStyleBackColor = False
+        Me.btnClear.BackColor = System.Drawing.Color.Maroon
+        Me.btnClear.Cursor = System.Windows.Forms.Cursors.Hand
+        Me.btnClear.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.btnClear.Font = New System.Drawing.Font("Palatino Linotype", 9.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.btnClear.ForeColor = System.Drawing.SystemColors.ButtonHighlight
+        Me.btnClear.Location = New System.Drawing.Point(8, 7)
+        Me.btnClear.Name = "btnClear"
+        Me.btnClear.Size = New System.Drawing.Size(93, 28)
+        Me.btnClear.TabIndex = 0
+        Me.btnClear.Text = "New"
+        Me.btnClear.UseVisualStyleBackColor = False
         '
         'Timer1
         '
@@ -622,7 +622,7 @@ Partial Class frmVouchersEntry
     Friend WithEvents btnClose As System.Windows.Forms.Button
     Friend WithEvents btnUpdate As System.Windows.Forms.Button
     Friend WithEvents btnSave As System.Windows.Forms.Button
-    Friend WithEvents btnNew As System.Windows.Forms.Button
+    Friend WithEvents btnClear As System.Windows.Forms.Button
     Friend WithEvents GroupBox2 As System.Windows.Forms.GroupBox
     Friend WithEvents Label8 As System.Windows.Forms.Label
     Friend WithEvents Label11 As System.Windows.Forms.Label

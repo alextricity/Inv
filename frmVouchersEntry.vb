@@ -79,7 +79,7 @@ Public Class frmVouchersEntry
     End Function
 
 
-    Private Sub btnNew_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles btnNew.Click
+    Private Sub btnClear_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles btnClear.Click
         Reset()
         Reset()
     End Sub

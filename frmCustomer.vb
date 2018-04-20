@@ -119,6 +119,9 @@ Public Class frmCustomer
             If (rbFemale.Checked = True) Then
                 s = rbFemale.Text
             End If
+
+
+
             con = New OdbcConnection(cs)
             con.Open()
             Dim cb As String = "insert into Customer(ID, CustomerID, [Name], Gender, Address, City, ContactNo, EmailID,Remarks,State,ZipCode,Photo,CustomerType) VALUES (@d1,@d2,@d3,@d4,@d5,@d6,@d7,@d8,@d9,@d10,@d11,@d12,'Regular')"
@@ -305,7 +308,7 @@ Public Class frmCustomer
         End Try
     End Sub
 
-    Private Sub btnNew_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles btnNew.Click
+    Private Sub btnClear_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles btnClear.Click
         Reset()
     End Sub
 

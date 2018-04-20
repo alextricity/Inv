@@ -62,7 +62,7 @@ Partial Class frmServices
         Me.btnClose = New System.Windows.Forms.Button()
         Me.btnUpdate = New System.Windows.Forms.Button()
         Me.btnSave = New System.Windows.Forms.Button()
-        Me.btnNew = New System.Windows.Forms.Button()
+        Me.btnClear = New System.Windows.Forms.Button()
         Me.Timer1 = New System.Windows.Forms.Timer(Me.components)
         Me.ToolTip1 = New System.Windows.Forms.ToolTip(Me.components)
         Label5 = New System.Windows.Forms.Label()
@@ -449,7 +449,7 @@ Partial Class frmServices
         Me.Panel3.Controls.Add(Me.btnClose)
         Me.Panel3.Controls.Add(Me.btnUpdate)
         Me.Panel3.Controls.Add(Me.btnSave)
-        Me.Panel3.Controls.Add(Me.btnNew)
+        Me.Panel3.Controls.Add(Me.btnClear)
         Me.Panel3.Location = New System.Drawing.Point(558, 55)
         Me.Panel3.Name = "Panel3"
         Me.Panel3.Size = New System.Drawing.Size(111, 217)
@@ -525,19 +525,19 @@ Partial Class frmServices
         Me.btnSave.Text = "&Save + Print"
         Me.btnSave.UseVisualStyleBackColor = False
         '
-        'btnNew
+        'btnClear
         '
-        Me.btnNew.BackColor = System.Drawing.Color.Maroon
-        Me.btnNew.Cursor = System.Windows.Forms.Cursors.Hand
-        Me.btnNew.FlatStyle = System.Windows.Forms.FlatStyle.Popup
-        Me.btnNew.Font = New System.Drawing.Font("Palatino Linotype", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.btnNew.ForeColor = System.Drawing.SystemColors.ButtonHighlight
-        Me.btnNew.Location = New System.Drawing.Point(11, 10)
-        Me.btnNew.Name = "btnNew"
-        Me.btnNew.Size = New System.Drawing.Size(92, 28)
-        Me.btnNew.TabIndex = 0
-        Me.btnNew.Text = "&New"
-        Me.btnNew.UseVisualStyleBackColor = False
+        Me.btnClear.BackColor = System.Drawing.Color.Maroon
+        Me.btnClear.Cursor = System.Windows.Forms.Cursors.Hand
+        Me.btnClear.FlatStyle = System.Windows.Forms.FlatStyle.Popup
+        Me.btnClear.Font = New System.Drawing.Font("Palatino Linotype", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.btnClear.ForeColor = System.Drawing.SystemColors.ButtonHighlight
+        Me.btnClear.Location = New System.Drawing.Point(11, 10)
+        Me.btnClear.Name = "btnClear"
+        Me.btnClear.Size = New System.Drawing.Size(92, 28)
+        Me.btnClear.TabIndex = 0
+        Me.btnClear.Text = "&New"
+        Me.btnClear.UseVisualStyleBackColor = False
         '
         'Timer1
         '
@@ -573,7 +573,7 @@ Partial Class frmServices
     Friend WithEvents btnClose As System.Windows.Forms.Button
     Friend WithEvents btnUpdate As System.Windows.Forms.Button
     Friend WithEvents btnSave As System.Windows.Forms.Button
-    Friend WithEvents btnNew As System.Windows.Forms.Button
+    Friend WithEvents btnClear As System.Windows.Forms.Button
     Friend WithEvents btnGetData As System.Windows.Forms.Button
     Friend WithEvents txtCustomerName As System.Windows.Forms.TextBox
     Friend WithEvents GroupBox4 As System.Windows.Forms.GroupBox

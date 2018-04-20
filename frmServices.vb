@@ -262,7 +262,7 @@ Public Class frmServices
 
     End Sub
 
-    Private Sub btnNew_Click(sender As System.Object, e As System.EventArgs) Handles btnNew.Click
+    Private Sub btnClear_Click(sender As System.Object, e As System.EventArgs) Handles btnClear.Click
         Reset()
     End Sub
 

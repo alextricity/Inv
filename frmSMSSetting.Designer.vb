@@ -34,7 +34,7 @@ Partial Class frmSMSSetting
         Me.btnDelete = New System.Windows.Forms.Button()
         Me.btnUpdate = New System.Windows.Forms.Button()
         Me.btnSave = New System.Windows.Forms.Button()
-        Me.btnNew = New System.Windows.Forms.Button()
+        Me.btnClear = New System.Windows.Forms.Button()
         Me.chkIsEnabled = New System.Windows.Forms.CheckBox()
         Me.chkIsDefault = New System.Windows.Forms.CheckBox()
         Me.dgw = New System.Windows.Forms.DataGridView()
@@ -86,7 +86,7 @@ Partial Class frmSMSSetting
         Me.Panel3.Controls.Add(Me.btnDelete)
         Me.Panel3.Controls.Add(Me.btnUpdate)
         Me.Panel3.Controls.Add(Me.btnSave)
-        Me.Panel3.Controls.Add(Me.btnNew)
+        Me.Panel3.Controls.Add(Me.btnClear)
         Me.Panel3.Location = New System.Drawing.Point(684, 47)
         Me.Panel3.Name = "Panel3"
         Me.Panel3.Size = New System.Drawing.Size(111, 143)
@@ -134,19 +134,19 @@ Partial Class frmSMSSetting
         Me.btnSave.Text = "Save"
         Me.btnSave.UseVisualStyleBackColor = False
         '
-        'btnNew
+        'btnClear
         '
-        Me.btnNew.BackColor = System.Drawing.Color.Indigo
-        Me.btnNew.Cursor = System.Windows.Forms.Cursors.Hand
-        Me.btnNew.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-        Me.btnNew.Font = New System.Drawing.Font("Palatino Linotype", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.btnNew.ForeColor = System.Drawing.SystemColors.ButtonHighlight
-        Me.btnNew.Location = New System.Drawing.Point(13, 10)
-        Me.btnNew.Name = "btnNew"
-        Me.btnNew.Size = New System.Drawing.Size(82, 28)
-        Me.btnNew.TabIndex = 0
-        Me.btnNew.Text = "New"
-        Me.btnNew.UseVisualStyleBackColor = False
+        Me.btnClear.BackColor = System.Drawing.Color.Indigo
+        Me.btnClear.Cursor = System.Windows.Forms.Cursors.Hand
+        Me.btnClear.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.btnClear.Font = New System.Drawing.Font("Palatino Linotype", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.btnClear.ForeColor = System.Drawing.SystemColors.ButtonHighlight
+        Me.btnClear.Location = New System.Drawing.Point(13, 10)
+        Me.btnClear.Name = "btnClear"
+        Me.btnClear.Size = New System.Drawing.Size(82, 28)
+        Me.btnClear.TabIndex = 0
+        Me.btnClear.Text = "New"
+        Me.btnClear.UseVisualStyleBackColor = False
         '
         'chkIsEnabled
         '
@@ -277,7 +277,7 @@ Partial Class frmSMSSetting
         Me.Label5.Name = "Label5"
         Me.Label5.Size = New System.Drawing.Size(648, 36)
         Me.Label5.TabIndex = 9
-        Me.Label5.Text = "Ex:  http://127.0.0.1:9500/api?action=sendmessage&username=admin&password=12345&r" & _
+        Me.Label5.Text = "Ex:  http://127.0.0.1:9500/api?action=sendmessage&username=admin&password=12345&r" &
     "ecipient=@MobileNo&" & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10) & "messagetype=SMS:TEXT&Message=@Message"
         '
         'txtID
@@ -326,7 +326,7 @@ Partial Class frmSMSSetting
     Friend WithEvents btnDelete As System.Windows.Forms.Button
     Friend WithEvents btnUpdate As System.Windows.Forms.Button
     Friend WithEvents btnSave As System.Windows.Forms.Button
-    Friend WithEvents btnNew As System.Windows.Forms.Button
+    Friend WithEvents btnClear As System.Windows.Forms.Button
     Friend WithEvents chkIsEnabled As System.Windows.Forms.CheckBox
     Friend WithEvents chkIsDefault As System.Windows.Forms.CheckBox
     Friend WithEvents dgw As System.Windows.Forms.DataGridView
