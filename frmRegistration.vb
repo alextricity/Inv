@@ -164,7 +164,7 @@ Public Class frmRegistration
         Try
             con = New OdbcConnection(cs)
             con.Open()
-            cmd = New OdbcCommand("SELECT RTRIM(userid), RTRIM(UserType), RTRIM(Password), RTRIM(Name), RTRIM(EmailID), RTRIM(ContactNo),RTRIM(Active),JoiningDate from Registration order by JoiningDate", con)
+            cmd = New OdbcCommand("SELECT RTRIM(UserID), RTRIM(UserType), RTRIM(Password), RTRIM(UserName), RTRIM(Email), RTRIM(ContactNo),RTRIM(Active),DateCreated from Registration order by DateCreated", con)
             rdr = cmd.ExecuteReader(CommandBehavior.CloseConnection)
             dgw.Rows.Clear()
             While (rdr.Read() = True)

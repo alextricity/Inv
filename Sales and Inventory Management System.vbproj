@@ -81,6 +81,7 @@
       <HintPath>bin\Debug\Microsoft.SqlServer.Smo.dll</HintPath>
     </Reference>
     <Reference Include="System" />
+    <Reference Include="System.configuration" />
     <Reference Include="System.Data" />
     <Reference Include="System.Deployment" />
     <Reference Include="System.Drawing" />
@@ -487,6 +488,9 @@
     <Content Include="Resources\Pictures\Utilities-icon.png" />
     <Content Include="Resources\Pictures\Wordpad_icon_%28Windows_7%2911.png" />
     <Content Include="Resources\Pictures\zanox-icon-voucher-162x162.png" />
+    <Content Include="Resources\SIMS.mdb">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
     <Content Include="SnapShot.jpg" />
     <None Include="Resources\SQLSettings.dat">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>

@@ -19,8 +19,9 @@ Public Class frmLogin
             cmd = con.CreateCommand()
             cmd.CommandText = "SELECT RTRIM(UserID),RTRIM(Password) FROM Registration where UserID = @d1 and Password=@d2 and Active='Yes'"
             cmd.Parameters.AddWithValue("@d1", UserID.Text)
-            cmd.Parameters.AddWithValue("@d2", Encrypt(Password.Text))
+            cmd.Parameters.AddWithValue("@d2", Password.Text)
             rdr = cmd.ExecuteReader()
+            MsgBox("stop")
             If rdr.Read() Then
                 con = New OdbcConnection(cs)
                 con.Open()

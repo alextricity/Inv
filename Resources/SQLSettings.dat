@@ -1,1 +1,1 @@
-Data Source="sims;dbq=C:\Users\aroberts\AppData\Roaming\Inv\SIMSmdb.mdb;defaultdir=C:\Users\aroberts\AppData\Roaming\Inv;driverid=25;fil=MS Access;maxbuffersize=2048;pagetimeout=5;uid=admin;Integrated Security=True"
+Data Source="sims;dbq=C:\Users\aroberts\Documents\GitHub\Inv\bin\Debug\Resources\SIMS.mdb;defaultdir=C:\Users\aroberts\Documents\GitHub\Inv\bin\Debug\Resources;driverid=25;fil=MS Access;maxbuffersize=2048;pagetimeout=5;uid=admin;Integrated Security=True"
